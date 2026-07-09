@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cole Gaddis Racing — 2025 AMP Shifter Champion</title>
+<meta name="description" content="Cole Gaddis — 2025 AMP Shifter Champion, Team USA T4 Nations Cup. Sponsorship, partnerships, and bookings.">
+<meta property="og:title" content="Cole Gaddis Racing">
+<meta property="og:description" content="2025 AMP Shifter Champion · Team USA T4 Nations Cup · Partner with Cole">
+<style>
+  :root{
+    --ink:#111214; --paper:#f5f4f0; --red:#e04c00; --yellow:#ff6b00;
+    --grey:#6b6b6b; --line:#d8d5cd;
+    --mono:'Courier New',ui-monospace,monospace;
+    --sans:'Helvetica Neue',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  /* timing-sheet texture */
+  .rule{border-top:2px solid var(--ink)}
+  .mono{font-family:var(--mono)}
+  /* top bar */
+  header{background:var(--ink);color:var(--paper);position:sticky;top:0;z-index:10}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .brand{font-family:var(--mono);font-weight:bold;letter-spacing:.08em;font-size:15px}
+  .brand span{color:var(--yellow)}
+  nav a{color:var(--paper);text-decoration:none;font-size:13px;margin-left:20px;letter-spacing:.06em;text-transform:uppercase}
+  nav a:hover{color:var(--yellow)}
+  nav a.cta{background:var(--red);padding:8px 14px;font-weight:bold}
+  /* hero */
+  .hero{background:linear-gradient(90deg,rgba(10,10,12,.92) 0%,rgba(10,10,12,.55) 60%,rgba(10,10,12,.25) 100%),url('hero.jpg') center right/cover no-repeat #0a0a0c;color:var(--paper);padding:96px 0 72px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-40px;top:-40px;width:340px;height:340px;
+    background:conic-gradient(#fff 0 25%,transparent 0 50%,#fff 0 75%,transparent 0);
+    background-size:40px 40px;opacity:.06;transform:rotate(12deg)}
+  .plate{display:inline-block;background:var(--yellow);color:#fff;font-family:var(--mono);
+    font-size:15px;font-weight:bold;padding:4px 12px;letter-spacing:.15em;margin-bottom:18px}
+  h1{font-size:clamp(38px,7vw,72px);line-height:1.02;text-transform:uppercase;letter-spacing:-.01em}
+  h1 em{font-style:normal;color:var(--yellow)}
+  .hero p.sub{font-family:var(--mono);margin-top:16px;font-size:15px;color:#cfccc4;max-width:560px}
+  .hero .btns{margin-top:28px}
+  .btn{display:inline-block;text-decoration:none;font-weight:bold;font-size:14px;letter-spacing:.06em;
+    text-transform:uppercase;padding:14px 24px;margin-right:12px;margin-top:8px}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-ghost{border:2px solid var(--paper);color:var(--paper)}
+  .btn:hover{opacity:.9}
+  /* stats strip */
+  .stats{background:var(--yellow)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+  .stats{color:#fff}
+  .stats div{padding:22px 8px;border-left:2px solid rgba(0,0,0,.15)}
+  .stats div:first-child{border-left:none}
+  .stats b{display:block;font-size:clamp(28px,4.5vw,44px);font-family:var(--mono)}
+  .stats span{font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  /* sections */
+  section{padding:64px 0}
+  .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+  h2{font-size:clamp(26px,4vw,40px);text-transform:uppercase;margin-bottom:24px}
+  .cols{display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
+  .photo{background:#e2dfd7 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><text x="10" y="45" font-family="monospace" font-size="12" fill="%23999">photo</text></svg>') center/60px no-repeat;
+    min-height:320px;border:2px solid var(--ink)}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  /* results table */
+  table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:14px}
+  th{background:var(--ink);color:var(--paper);text-align:left;padding:10px 12px;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+  td{padding:12px;border-bottom:1px solid var(--line)}
+  tr:hover td{background:#eeece5}
+  .tag{display:inline-block;background:var(--ink);color:var(--yellow);font-size:11px;padding:2px 8px;letter-spacing:.1em}
+  /* partner grid */
+  .menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:2px;background:var(--ink);border:2px solid var(--ink)}
+  .menu div{background:var(--paper);padding:18px}
+  .menu b{display:block;font-size:14px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+  .menu p{font-size:13px;color:var(--grey)}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:32px}
+  .tier{border:2px solid var(--ink);padding:22px}
+  .tier.hot{background:var(--ink);color:var(--paper)}
+  .tier h3{font-family:var(--mono);font-size:16px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+  .tier.hot h3{color:var(--yellow)}
+  .tier p{font-size:13px;color:var(--grey)}
+  .tier.hot p{color:#cfccc4}
+  /* roster */
+  .roster{display:flex;flex-wrap:wrap;gap:10px}
+  .roster span{font-family:var(--mono);font-size:13px;border:1px solid var(--ink);padding:6px 12px}
+  /* contact */
+  .contact{background:var(--ink);color:var(--paper)}
+  .contact a{color:var(--yellow);text-decoration:none}
+  .contact .big{font-size:clamp(22px,3.5vw,34px);font-family:var(--mono);margin:6px 0}
+  footer{background:#000;color:#8a8a8a;font-family:var(--mono);font-size:12px;padding:20px 0}
+  footer a{color:#8a8a8a}
+  @media(max-width:760px){
+    .cols{grid-template-columns:1fr}
+    .stats .wrap{grid-template-columns:repeat(2,1fr)}
+    .stats div:nth-child(3){border-left:none}
+    nav a:not(.cta){display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">COLE GADDIS <span>RACING</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#results">Results</a>
+      <a href="#partners">Partners</a>
+      <a href="#sponsor" class="cta">Partner With Cole</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="plate">SHIFTER KART · TEAM USA</div>
+    <h1>Cole<br>Gaddis<br><em>Racing</em></h1>
+    <p class="sub">2025 AMP Shifter Champion 🏆 · Team USA — Tillotson T4 Nations Cup · Racing out of Southern California, competing on the world stage.</p>
+    <div class="btns">
+      <a class="btn btn-red" href="#sponsor">Partner With Cole</a>
+      <a class="btn btn-ghost" href="#contact">Bookings</a>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="wrap">
+    <div><b>37</b><span>Races</span></div>
+    <div><b>32</b><span>Podiums</span></div>
+    <div><b>19</b><span>Wins</span></div>
+    <div><b>4</b><span>Championships</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap cols">
+    <div>
+      <div class="kicker">Driver Profile</div>
+      <h2>Built for the podium</h2>
+      <p>Cole Gaddis is a championship-winning shifter kart driver competing across Southern California's toughest leagues — Adams Motorsports Park, TriC, and LAKC. In 2025 he took the AMP Shifter Championship at Adams Motorsports Park and earned his place representing <strong>Team USA at the Tillotson T4 Nations Cup world final in Spain</strong> by winning the California points battle.</p>
+      <p style="margin-top:14px">An 86% podium rate isn't luck. It's seat time, discipline, and a program run like a professional operation — which is exactly what Cole's partners plug into.</p>
+      <p style="margin-top:14px" class="mono">📍 Los Angeles, CA · IG <a href="https://instagram.com/colegaddisracing" style="color:var(--red)">@colegaddisracing</a></p>
+    </div>
+    <div class="photo"><img src="portrait.jpg" alt="Cole Gaddis at the Tillotson T4 Nations Cup"></div>
+  </div>
+</section>
+
+<section id="results" style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker">Timing Sheet</div>
+    <h2>Career Highlights</h2>
+    <table>
+      <tr><th>Season</th><th>Result</th><th></th></tr>
+      <tr><td class="mono">2026</td><td>P3, KZ Shifter debut — Sonoma. First race in a CRG and first in KZ machinery, standing on the podium against national champions as the youngest driver in the field</td><td><span class="tag">PODIUM</span></td></tr>
+      <tr><td class="mono">2025</td><td>AMP Shifter Champion — Adams Motorsports Park</td><td><span class="tag">CHAMPION</span></td></tr>
+      <tr><td class="mono">2025</td><td>Team USA — Tillotson T4 Nations Cup, Spain (world final)</td><td><span class="tag">TEAM USA</span></td></tr>
+      <tr><td class="mono">2024</td><td>Won T4NC California points — earned Spain registration</td><td><span class="tag">QUALIFIED</span></td></tr>
+      <tr><td class="mono">2023–24</td><td>2× JR Class Championships — Adams Motorsports Park</td><td><span class="tag">CHAMPION</span></td></tr>
+      <tr><td class="mono">2023–24</td><td>19 JR Class podiums across AMP, TriC & LAKC</td><td></td></tr>
+    </table>
+  </div>
+</section>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+  <img src="action.jpg" alt="Cole Gaddis on the grid at Adams Motorsports Park" style="width:100%;height:380px;object-fit:cover;display:block">
+  <img src="podium.jpg" alt="Cole Gaddis, P1 at Adams Motorsports Park" style="width:100%;height:380px;object-fit:cover;display:block">
+</div>
+
+<section id="sponsor" style="background:#ecebe4">
+  <div class="wrap">
+    <div class="kicker">Sponsorship</div>
+    <h2>Partner with Cole — turnkey activation, not just a logo</h2>
+    <p style="max-width:720px;margin-bottom:28px">Sponsorship pays off when it's activated. Every Cole Gaddis Racing partnership comes with a working activation program and documented reporting — so you see what you got.</p>
+    <div class="menu">
+      <div><b>Race-Day Hospitality</b><p>Bring clients & referral partners trackside for hosted race days.</p></div>
+      <div><b>Co-Branded Merch</b><p>Apparel program produced by Cole Apparel — real gear, not trinkets.</p></div>
+      <div><b>Content Engine</b><p>Ongoing photo/video from every race weekend, cut for your channels.</p></div>
+      <div><b>Lead Tracking</b><p>QR & promo-code attribution so results are measurable.</p></div>
+      <div><b>B2B Introductions</b><p>Warm intros across the partner network.</p></div>
+      <div><b>Show-Kart Appearances</b><p>Cole's race kart at your storefront, office, or event.</p></div>
+      <div><b>Employee Race Nights</b><p>Team-building karting events hosted with Cole.</p></div>
+      <div><b>Category Exclusivity</b><p>Own your industry within the program.</p></div>
+    </div>
+    <div class="tiers">
+      <div class="tier hot"><h3>Title Partner</h3><p>Naming rights, lead kart placement, full activation menu, category exclusivity.</p></div>
+      <div class="tier"><h3>Race Partner</h3><p>Major kart & suit placement, hospitality days, content package.</p></div>
+      <div class="tier"><h3>Supporting</h3><p>Kart placement, social features, event access.</p></div>
+      <div class="tier"><h3>Technical</h3><p>In-kind partners: parts, services, facilities.</p></div>
+    </div>
+    <p style="margin-top:28px"><a class="btn btn-red" href="mailto:tye@coleapparel.com?subject=Cole%20Gaddis%20Racing%20—%20Sponsorship">Request the Sponsorship Deck</a></p>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="wrap">
+    <div class="kicker">The Roster</div>
+    <h2>Partners past & present</h2>
+    <div class="roster">
+      <span>Questa Volta</span><span>Alpha Structural</span><span>Racer Rob's Plumbing</span>
+      <span>Stanik Motorsports</span><span>ReQuest Materials & Supply</span><span>KCR</span>
+      <span>California Locos</span><span>Bon Vivant Market Café</span><span>Workhorse</span>
+      <span>MA®KET</span><span>Factory Karts</span><span>Tillotson</span>
+      <span>Adams Motorsports Park</span><span>Maxxis</span><span>Coleman</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--yellow)">Bookings & Inquiries</div>
+    <h2>Put Cole to work</h2>
+    <p>Sponsorships · appearances · brand & athlete work</p>
+    <p class="big"><a href="mailto:tye@coleapparel.com">tye@coleapparel.com</a></p>
+    <p class="mono">Tye Gaddis — Team Manager · IG <a href="https://instagram.com/colegaddisracing">@colegaddisracing</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Cole Gaddis Racing · colegaddisracing.com</div>
+</footer>
+
+</body>
+</html>
