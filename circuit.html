@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cole Gaddis Racing — Circuit Style</title>
+<style>
+  :root{
+    --asphalt:#232629; --asphalt2:#2c3034; --paint:#f2f1ec; --orange:#ff6b00;
+    --kerbred:#d32f0e; --dim:#9aa0a6; --line:#3a3f45;
+    --sans:'Helvetica Neue',Arial,sans-serif; --mono:'Courier New',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--asphalt);color:var(--paint);font-family:var(--sans);line-height:1.6;overflow-x:hidden}
+  /* asphalt grain */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:0;
+    background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px),radial-gradient(rgba(0,0,0,.35) 1px,transparent 1px);
+    background-size:5px 5px,7px 7px;background-position:0 0,3px 3px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+
+  /* kerb stripe divider */
+  .kerb{height:14px;background:repeating-linear-gradient(45deg,var(--kerbred) 0 26px,var(--paint) 26px 52px)}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(35,38,41,.9);backdrop-filter:blur(10px);border-bottom:2px solid var(--paint)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+  .brand{font-weight:800;letter-spacing:.14em;font-size:14px;text-transform:uppercase}
+  .brand em{color:var(--orange);font-style:normal}
+  nav a{color:var(--dim);text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-left:22px}
+  nav a:hover{color:var(--paint)}
+  nav a.cta{background:var(--orange);color:#000;font-weight:800;padding:9px 16px}
+
+  /* hero: 3D-tilted circuit map */
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:70px;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  .roadtxt{font-size:11px;letter-spacing:.5em;color:var(--dim);text-transform:uppercase;margin-bottom:16px}
+  .roadtxt b{color:var(--orange)}
+  h1{font-size:clamp(42px,6.8vw,84px);line-height:.94;font-weight:800;text-transform:uppercase;letter-spacing:-.02em;
+    text-shadow:0 3px 0 rgba(0,0,0,.4)}
+  h1 span{color:transparent;-webkit-text-stroke:2px var(--paint)}
+  .sub{color:var(--dim);font-size:15px;max-width:440px;margin-top:20px}
+  .sub b{color:var(--paint)}
+  .btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{text-decoration:none;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:15px 26px}
+  .btn-o{background:var(--orange);color:#000}
+  .btn-o:hover{box-shadow:0 8px 24px rgba(255,107,0,.4)}
+  .btn-w{border:2px solid var(--paint);color:var(--paint)}
+  .btn-w:hover{background:var(--paint);color:var(--asphalt)}
+
+  /* the circuit */
+  .circuitBox{perspective:1000px}
+  .circuit{transform:rotateX(38deg) rotateZ(-8deg);transform-style:preserve-3d;transition:transform .3s ease-out;filter:drop-shadow(0 30px 30px rgba(0,0,0,.5))}
+  .circuit svg{width:100%;height:auto;overflow:visible}
+  .trackbed{fill:none;stroke:#17191b;stroke-width:34;stroke-linejoin:round;stroke-linecap:round}
+  .trackline{fill:none;stroke:#3d4248;stroke-width:30;stroke-linejoin:round;stroke-linecap:round}
+  .racingline{fill:none;stroke:var(--orange);stroke-width:3.5;stroke-dasharray:14 10;animation:dash 1.2s linear infinite}
+  @keyframes dash{to{stroke-dashoffset:-24}}
+  .sf{stroke:url(#checker);stroke-width:30}
+  .cornerlbl{font-family:var(--mono);font-size:13px;fill:var(--paint);letter-spacing:.1em}
+  .cornerlbl tspan{fill:var(--orange);font-weight:bold}
+  .kartdot{filter:drop-shadow(0 0 8px var(--orange))}
+
+  /* pit board stats */
+  .pitband{background:#17191b;border-top:2px solid var(--paint);border-bottom:2px solid var(--paint)}
+  .pitband .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+  .pit{padding:26px 10px;text-align:center;border-left:2px dashed var(--line)}
+  .pit:first-child{border-left:none}
+  .pit b{display:block;font-size:clamp(30px,4vw,46px);font-weight:800;color:var(--orange);font-family:var(--mono)}
+  .pit span{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim)}
+
+  section{padding:90px 0;position:relative;z-index:2}
+  .k{font-family:var(--mono);color:var(--orange);font-size:12px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px;display:block}
+  h2{font-size:clamp(28px,4vw,48px);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:26px}
+
+  .cols{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .cols p{color:var(--dim);font-size:14px;margin-bottom:14px}
+  .cols p b{color:var(--paint)}
+  .tiltcard{perspective:900px}
+  .tilt{transform-style:preserve-3d;transition:transform .18s ease-out;border:3px solid var(--paint);box-shadow:0 20px 40px rgba(0,0,0,.5);position:relative}
+  .tilt img{width:100%;display:block}
+  .tilt .plate{position:absolute;bottom:-2px;left:-2px;background:var(--orange);color:#000;font-family:var(--mono);font-weight:bold;font-size:11px;letter-spacing:.2em;padding:6px 12px}
+
+  /* results as track sectors */
+  .sector{display:grid;grid-template-columns:120px 1fr auto;gap:18px;align-items:center;background:var(--asphalt2);
+    border-left:8px solid var(--orange);padding:20px 24px;margin-bottom:12px;transition:transform .2s,box-shadow .2s}
+  .sector:hover{transform:translateX(8px);box-shadow:-8px 8px 0 rgba(0,0,0,.3)}
+  .sector .t{font-family:var(--mono);font-size:20px;font-weight:bold;color:var(--orange)}
+  .sector .d{color:var(--dim);font-size:14px}
+  .sector .d b{color:var(--paint)}
+  .sector .flag{font-family:var(--mono);font-size:10px;letter-spacing:.2em;background:var(--paint);color:var(--asphalt);padding:6px 12px;font-weight:bold;white-space:nowrap}
+
+  /* sponsor grid */
+  .menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;perspective:1200px}
+  .mcell{background:var(--asphalt2);border:2px solid var(--line);padding:22px;transition:transform .25s,border-color .25s;transform-style:preserve-3d}
+  .mcell:hover{transform:translateY(-6px) rotateX(6deg);border-color:var(--orange)}
+  .mcell b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+  .mcell p{font-size:12px;color:var(--dim)}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:34px;perspective:1200px}
+  .tier{border:2px solid var(--paint);padding:26px;transition:transform .25s}
+  .tier:hover{transform:translateY(-6px) rotateX(5deg)}
+  .tier.hot{background:var(--orange);color:#000;border-color:var(--orange)}
+  .tier h3{font-family:var(--mono);font-size:14px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+  .tier p{font-size:12px;opacity:.85}
+  .tier:not(.hot) p{color:var(--dim)}
+
+  .logowall{background:#17191b;border:2px solid var(--line);padding:36px 24px;display:flex;flex-wrap:wrap;gap:32px 44px;justify-content:center;align-items:center}
+  .logowall img{height:44px;width:auto;opacity:.9;transition:transform .2s}
+  .logowall img:hover{transform:scale(1.08)}
+  .chips{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{font-family:var(--mono);font-size:11px;color:var(--dim);border:1px dashed var(--line);padding:6px 12px}
+
+  .contact{text-align:center;background:#17191b;border-top:2px solid var(--paint)}
+  .contact .big a{color:var(--orange);text-decoration:none;font-size:clamp(22px,3.4vw,36px);font-weight:800;font-family:var(--mono)}
+  .contact p{color:var(--dim);font-size:13px}
+  footer{padding:24px 0;text-align:center;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.2em}
+
+  @media(max-width:840px){
+    .hero .wrap{grid-template-columns:1fr}
+    .cols{grid-template-columns:1fr}
+    .pitband .wrap{grid-template-columns:repeat(2,1fr)}
+    .pit:nth-child(3){border-left:none}
+    nav a:not(.cta){display:none}
+    .sector{grid-template-columns:80px 1fr}
+    .sector .flag{grid-column:2}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Cole Gaddis <em>Racing</em></div>
+    <nav>
+      <a href="#about">T1 · Driver</a>
+      <a href="#results">T2 · Results</a>
+      <a href="#partners">T3 · Partners</a>
+      <a href="#sponsor" class="cta">Partner With Cole</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="roadtxt"><b>●</b> SoCal Circuit · Shifter Kart · Team USA</div>
+      <h1>Every<br>corner<br><span>earned.</span></h1>
+      <p class="sub"><b>Cole Gaddis</b> — 2025 AMP Shifter Champion, Team USA at the T4 Nations Cup in Spain, and now on the podium in KZ machinery with CRG. <b>86% career podium rate.</b></p>
+      <div class="btns">
+        <a class="btn btn-o" href="#sponsor">Partner With Cole</a>
+        <a class="btn btn-w" href="#contact">Bookings</a>
+      </div>
+    </div>
+    <div class="circuitBox">
+      <div class="circuit" id="circuit">
+        <svg viewBox="0 0 600 420">
+          <defs>
+            <pattern id="checker" width="16" height="16" patternUnits="userSpaceOnUse">
+              <rect width="8" height="8" fill="#fff"/><rect x="8" y="8" width="8" height="8" fill="#fff"/>
+              <rect x="8" width="8" height="8" fill="#000"/><rect y="8" width="8" height="8" fill="#000"/>
+            </pattern>
+          </defs>
+          <path id="trk" class="trackbed" d="M110,330 L110,150 Q110,90 175,90 L330,90 Q370,90 395,125 L440,185 Q460,210 495,198 L515,190 Q555,178 550,225 L540,285 Q535,330 488,330 Z"/>
+          <path class="trackline" d="M110,330 L110,150 Q110,90 175,90 L330,90 Q370,90 395,125 L440,185 Q460,210 495,198 L515,190 Q555,178 550,225 L540,285 Q535,330 488,330 Z"/>
+          <path class="racingline" d="M110,330 L110,150 Q110,90 175,90 L330,90 Q370,90 395,125 L440,185 Q460,210 495,198 L515,190 Q555,178 550,225 L540,285 Q535,330 488,330 Z"/>
+          <line x1="200" y1="313" x2="200" y2="347" class="sf"/>
+          <text class="cornerlbl" x="60" y="240"><tspan>T1</tspan> DRIVER</text>
+          <text class="cornerlbl" x="240" y="70"><tspan>T2</tspan> RESULTS</text>
+          <text class="cornerlbl" x="470" y="165"><tspan>T3</tspan> PARTNERS</text>
+          <text class="cornerlbl" x="330" y="375"><tspan>S/F</tspan> BOOK COLE</text>
+          <circle class="kartdot" r="8" fill="#ff6b00">
+            <animateMotion dur="9s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#trk"/>
+            </animateMotion>
+          </circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="kerb"></div>
+<div class="pitband">
+  <div class="wrap">
+    <div class="pit"><b>37</b><span>Races</span></div>
+    <div class="pit"><b>32</b><span>Podiums</span></div>
+    <div class="pit"><b>19</b><span>Wins</span></div>
+    <div class="pit"><b>4</b><span>Championships</span></div>
+  </div>
+</div>
+<div class="kerb"></div>
+
+<section id="about">
+  <div class="wrap cols">
+    <div>
+      <span class="k">Turn 1 — Driver Profile</span>
+      <h2>Built for the podium</h2>
+      <p>Cole Gaddis competes across Southern California's toughest leagues — Adams Motorsports Park, TriC, and LAKC. In 2025 he took the <b>AMP Shifter Championship</b> and represented <b>Team USA at the Tillotson T4 Nations Cup world final in Spain</b> after winning the California points battle.</p>
+      <p>2026: KZ debut at Sonoma in a CRG — <b>P3 against national champions, youngest in the field.</b></p>
+      <p style="color:var(--paint)">📍 Los Angeles, CA · IG <a href="https://instagram.com/colegaddisracing" style="color:var(--orange);text-decoration:none">@colegaddisracing</a></p>
+    </div>
+    <div class="tiltcard">
+      <div class="tilt">
+        <img src="https://colegaddisracing.com/portrait.jpg" alt="Cole Gaddis">
+        <span class="plate">DRIVER · C.GADDIS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results" style="padding-top:0">
+  <div class="wrap">
+    <span class="k">Turn 2 — Sector Times</span>
+    <h2>Career highlights</h2>
+    <div class="sector"><div class="t">2026</div><div class="d"><b>P3 — KZ Shifter debut, Sonoma.</b> First race in a CRG, youngest in a field of national champions.</div><span class="flag">PODIUM</span></div>
+    <div class="sector"><div class="t">2025</div><div class="d"><b>AMP Shifter Champion</b> — Adams Motorsports Park.</div><span class="flag">CHAMPION</span></div>
+    <div class="sector"><div class="t">2025</div><div class="d"><b>Team USA</b> — Tillotson T4 Nations Cup, Spain (world final).</div><span class="flag">TEAM USA</span></div>
+    <div class="sector"><div class="t">2024</div><div class="d">Won T4NC California points — earned Spain registration.</div><span class="flag">QUALIFIED</span></div>
+    <div class="sector"><div class="t">23–24</div><div class="d">2× JR Championships · 19 JR podiums across AMP, TriC & LAKC.</div><span class="flag">CHAMPION</span></div>
+  </div>
+</section>
+
+<div class="kerb"></div>
+
+<section id="sponsor" style="background:#1b1e21">
+  <div class="wrap">
+    <span class="k">Pit Lane — Sponsorship Program</span>
+    <h2>Turnkey activation, not just a logo</h2>
+    <div class="menu">
+      <div class="mcell"><b>Race-Day Hospitality</b><p>Clients & referral partners trackside for hosted race days.</p></div>
+      <div class="mcell"><b>Co-Branded Merch</b><p>Apparel produced by Cole Apparel — real gear, not trinkets.</p></div>
+      <div class="mcell"><b>Content Engine</b><p>Photo & video from every race weekend, cut for your channels.</p></div>
+      <div class="mcell"><b>Lead Tracking</b><p>QR & promo-code attribution so results are measurable.</p></div>
+      <div class="mcell"><b>B2B Introductions</b><p>Warm intros across the partner network.</p></div>
+      <div class="mcell"><b>Show-Kart Appearances</b><p>The race kart at your storefront, office, or event.</p></div>
+      <div class="mcell"><b>Employee Race Nights</b><p>Team-building karting events hosted with Cole.</p></div>
+      <div class="mcell"><b>Category Exclusivity</b><p>Own your industry within the program.</p></div>
+    </div>
+    <div class="tiers">
+      <div class="tier hot"><h3>Title Partner</h3><p>Naming rights, lead kart placement, full activation menu, category exclusivity.</p></div>
+      <div class="tier"><h3>Race Partner</h3><p>Major kart & suit placement, hospitality days, content package.</p></div>
+      <div class="tier"><h3>Supporting</h3><p>Kart placement, social features, event access.</p></div>
+      <div class="tier"><h3>Technical</h3><p>In-kind partners: parts, services, facilities.</p></div>
+    </div>
+    <p style="margin-top:32px"><a class="btn btn-o" href="mailto:tye@coleapparel.com?subject=Cole%20Gaddis%20Racing%20—%20Sponsorship">Request the Sponsorship Deck</a></p>
+  </div>
+</section>
+
+<div class="kerb"></div>
+
+<section id="partners">
+  <div class="wrap">
+    <span class="k">Turn 3 — The Roster</span>
+    <h2>Partners past & present</h2>
+    <div class="logowall">
+      <img src="https://colegaddisracing.com/logos/questavolta.png" alt="QuestaVolta">
+      <img src="https://colegaddisracing.com/logos/alphastructural.png" alt="Alpha Structural">
+      <img src="https://colegaddisracing.com/logos/adams.png" alt="Adams Motorsports Park">
+      <img src="https://colegaddisracing.com/logos/request.png" alt="ReQuest">
+      <img src="https://colegaddisracing.com/logos/bonvivant.png" alt="Bon Vivant">
+      <img src="https://colegaddisracing.com/logos/workhorse.png" alt="Workhorse Ramps" style="filter:brightness(0) invert(1)">
+      <img src="https://colegaddisracing.com/logos/localocos.png" alt="California Locos">
+      <img src="https://colegaddisracing.com/logos/market.png" alt="MARKET">
+      <img src="https://colegaddisracing.com/logos/coleman.png" alt="ColemanNation">
+      <img src="https://colegaddisracing.com/logos/albritton.png" alt="John & Tracy Albritton">
+    </div>
+    <div class="chips">
+      <span>Racer Rob's Plumbing</span><span>Stanik Motorsports</span><span>KCR</span>
+      <span>Factory Karts</span><span>Tillotson</span><span>Maxxis</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="k">Start / Finish — Bookings</span>
+    <h2>Put Cole to work</h2>
+    <p>Sponsorships · appearances · brand & athlete work</p>
+    <p style="margin:12px 0" class="big"><a href="mailto:tye@coleapparel.com">tye@coleapparel.com</a></p>
+    <p>Tye Gaddis — Team Manager · IG @colegaddisracing</p>
+  </div>
+</section>
+
+<footer>© 2026 COLE GADDIS RACING · COLEGADDISRACING.COM</footer>
+
+<script>
+// circuit map follows the mouse in 3D
+const c=document.getElementById('circuit');
+if(c){const box=c.parentElement;
+  box.addEventListener('mousemove',e=>{
+    const r=box.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    c.style.transform=`rotateX(${38-y*12}deg) rotateZ(${-8+x*8}deg)`;
+  });
+  box.addEventListener('mouseleave',()=>c.style.transform='rotateX(38deg) rotateZ(-8deg)');
+}
+// tilt cards
+document.querySelectorAll('.tilt').forEach(card=>{
+  const wrap=card.parentElement;
+  wrap.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`rotateY(${x*10}deg) rotateX(${-y*10}deg)`;
+  });
+  wrap.addEventListener('mouseleave',()=>card.style.transform='');
+});
+</script>
+</body>
+</html>
