@@ -113,6 +113,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#results">Results</a>
+      <a href="#gallery">Photos</a>
       <a href="#partners">Partners</a>
       <a href="#sponsor" class="cta">Partner With Cole</a>
     </nav>
@@ -169,10 +170,67 @@
   </div>
 </section>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-  <img src="action.jpg" alt="Cole Gaddis on the grid at Adams Motorsports Park" loading="lazy" style="width:100%;height:380px;object-fit:cover;display:block">
-  <img src="podium.jpg" alt="Cole Gaddis, P1 at Adams Motorsports Park" loading="lazy" style="width:100%;height:380px;object-fit:cover;object-position:50% 12%;display:block">
+<section id="gallery" style="background:var(--ink);padding:64px 0">
+  <div class="wrap">
+    <div class="kicker">Trackside</div>
+    <h2 style="color:var(--paper)">The Photo Wall</h2>
+    <div class="pwall">
+      <img src="action.jpg" alt="On the grid, Adams Motorsports Park" data-cap="On the grid — Adams Motorsports Park, 2025" loading="lazy">
+      <img src="podium.jpg" alt="P1 trophy" data-cap="P1 — Adams Motorsports Park" loading="lazy">
+      <img src="gal-corner1.jpg" alt="Cornering at speed" data-cap="Full send — race day at AMP" loading="lazy">
+      <img src="gal-helmet.jpg" alt="Helmet and wheel" data-cap="Between sessions — October 2024" loading="lazy">
+      <img src="gal-trophy1.jpg" alt="Trophy overhead" data-cap="Another one for the shelf" loading="lazy">
+      <img src="gal-visor.jpg" alt="Visor down" data-cap="Visor down — T4 Nations Cup paddock" loading="lazy">
+      <img src="gal-corner2.jpg" alt="Chasing down the leader" data-cap="Hunting — AMP club race" loading="lazy">
+      <img src="gal-trophy2.jpg" alt="P2 Chill Challenge" data-cap="P2 — SoCal Chill Challenge" loading="lazy">
+      <img src="portrait.jpg" alt="Cole Gaddis" data-cap="Team USA — Tillotson T4 Nations Cup" loading="lazy">
+      <img src="hero.jpg" alt="Studio kart" data-cap="The office" loading="lazy">
+    </div>
+  </div>
+</section>
+<div id="lightbox">
+  <span id="lbx">&times;</span>
+  <img id="lbimg" src="" alt="">
+  <p id="lbcap"></p>
+  <span class="lbnav" id="lbprev">&#10094;</span>
+  <span class="lbnav" id="lbnext">&#10095;</span>
 </div>
+<style>
+  .pwall{columns:3;column-gap:12px}
+  .pwall img{width:100%;margin-bottom:12px;display:block;cursor:pointer;border:2px solid transparent;
+    transition:transform .25s,border-color .25s,box-shadow .25s}
+  .pwall img:hover{transform:translateY(-5px) scale(1.02) rotate(-.5deg);border-color:var(--yellow);
+    box-shadow:0 16px 36px rgba(0,0,0,.55)}
+  #lightbox{display:none;position:fixed;inset:0;background:rgba(10,10,12,.96);z-index:100;
+    align-items:center;justify-content:center;flex-direction:column}
+  #lightbox.on{display:flex}
+  #lbimg{max-width:88vw;max-height:78vh;border:2px solid var(--yellow)}
+  #lbcap{color:#cfccc4;font-family:var(--mono);font-size:13px;letter-spacing:.08em;margin-top:14px}
+  #lbx{position:absolute;top:18px;right:28px;color:#fff;font-size:38px;cursor:pointer;line-height:1}
+  .lbnav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:34px;cursor:pointer;
+    padding:16px 20px;user-select:none}
+  .lbnav:hover{color:var(--yellow)}
+  #lbprev{left:8px}
+  #lbnext{right:8px}
+  @media(max-width:760px){.pwall{columns:2}}
+</style>
+<script>
+(function(){
+  const imgs=[...document.querySelectorAll('.pwall img')];
+  const lb=document.getElementById('lightbox'),im=document.getElementById('lbimg'),cap=document.getElementById('lbcap');
+  let idx=0;
+  function show(i){idx=(i+imgs.length)%imgs.length;im.src=imgs[idx].src;cap.textContent=imgs[idx].dataset.cap||'';lb.classList.add('on')}
+  imgs.forEach((el,i)=>el.addEventListener('click',()=>show(i)));
+  document.getElementById('lbx').onclick=()=>lb.classList.remove('on');
+  document.getElementById('lbprev').onclick=e=>{e.stopPropagation();show(idx-1)};
+  document.getElementById('lbnext').onclick=e=>{e.stopPropagation();show(idx+1)};
+  lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on')});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')lb.classList.remove('on');
+    if(e.key==='ArrowLeft')show(idx-1);
+    if(e.key==='ArrowRight')show(idx+1)});
+})();
+</script>
 
 <section id="sponsor" style="background:#ecebe4">
   <div class="wrap">
