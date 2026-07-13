@@ -158,15 +158,60 @@
   <div class="wrap">
     <div class="kicker">Timing Sheet</div>
     <h2>Career Highlights</h2>
-    <table>
-      <tr><th>Season</th><th>Result</th><th></th></tr>
-      <tr><td class="mono">2026</td><td>P3, KZ Shifter debut — Sonoma. First race in a CRG and first in KZ machinery, standing on the podium against national champions as the youngest driver in the field</td><td><span class="tag">PODIUM</span></td></tr>
-      <tr><td class="mono">2025</td><td>AMP Shifter Champion — Adams Motorsports Park</td><td><span class="tag">CHAMPION</span></td></tr>
-      <tr><td class="mono">2025</td><td>Team USA — Tillotson T4 Nations Cup, Spain (world final)</td><td><span class="tag">TEAM USA</span></td></tr>
-      <tr><td class="mono">2024</td><td>Won T4NC California points — earned Spain registration</td><td><span class="tag">QUALIFIED</span></td></tr>
-      <tr><td class="mono">2023–24</td><td>2× JR Class Championships — Adams Motorsports Park</td><td><span class="tag">CHAMPION</span></td></tr>
-      <tr><td class="mono">2023–24</td><td>19 JR Class podiums across AMP, TriC & LAKC</td><td></td></tr>
-    </table>
+    <div class="results">
+      <div class="rrow">
+        <div class="ryr">26</div>
+        <div><b>P3 — KZ Shifter debut, Sonoma</b><span>First race in a CRG, first in KZ machinery. On the podium against national champions as the youngest driver in the field.</span></div>
+        <em class="rtag podium">P3 · PODIUM</em>
+      </div>
+      <div class="rrow champ">
+        <div class="ryr">25</div>
+        <div><b>AMP Shifter Champion</b><span>Adams Motorsports Park — season championship.</span></div>
+        <em class="rtag gold">🏆 CHAMPION</em>
+      </div>
+      <div class="rrow">
+        <div class="ryr">25</div>
+        <div><b>Team USA — T4 Nations Cup, Spain</b><span>Tillotson world final. Selected off the California points win.</span></div>
+        <em class="rtag usa">◆ TEAM USA</em>
+      </div>
+      <div class="rrow">
+        <div class="ryr">24</div>
+        <div><b>Won T4NC California points</b><span>Earned the Spain world-final registration.</span></div>
+        <em class="rtag">✓ QUALIFIED</em>
+      </div>
+      <div class="rrow champ">
+        <div class="ryr">23<i>–24</i></div>
+        <div><b>2× JR Class Championships</b><span>Adams Motorsports Park — plus 19 JR podiums across AMP, TriC &amp; LAKC.</span></div>
+        <em class="rtag gold">🏆 2× CHAMPION</em>
+      </div>
+    </div>
+    <style>
+      .results{border-top:3px solid var(--ink)}
+      .rrow{display:grid;grid-template-columns:110px 1fr auto;gap:20px;align-items:center;
+        padding:22px 18px;border-bottom:1px solid var(--line);position:relative;
+        transition:transform .2s,background .2s,box-shadow .2s}
+      .rrow::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--yellow);
+        transform:scaleY(0);transition:transform .25s;transform-origin:top}
+      .rrow:hover{transform:translateX(8px);background:#fff;box-shadow:0 10px 26px rgba(0,0,0,.08)}
+      .rrow:hover::before{transform:scaleY(1)}
+      .ryr{font-family:var(--mono);font-size:clamp(34px,4.4vw,52px);font-weight:bold;color:var(--yellow);
+        line-height:1;letter-spacing:-.03em}
+      .ryr::before{content:"'";color:var(--ink);opacity:.35}
+      .ryr i{font-style:normal;font-size:.45em;color:var(--grey)}
+      .rrow b{display:block;font-size:17px;text-transform:uppercase;letter-spacing:.02em}
+      .rrow span{display:block;font-size:13px;color:var(--grey);margin-top:4px}
+      .rtag{font-family:var(--mono);font-style:normal;font-size:11px;font-weight:bold;letter-spacing:.16em;
+        white-space:nowrap;padding:8px 14px;background:var(--ink);color:var(--paper)}
+      .rtag.gold{background:var(--yellow);color:#fff}
+      .rtag.podium{background:var(--ink);color:var(--yellow)}
+      .rtag.usa{background:#1d3f8f;color:#fff}
+      .rrow.champ{background:linear-gradient(90deg,rgba(255,107,0,.06),transparent 55%)}
+      @media(max-width:700px){
+        .rrow{grid-template-columns:64px 1fr}
+        .rtag{grid-column:2;justify-self:start;margin-top:2px}
+        .ryr{font-size:30px}
+      }
+    </style>
   </div>
 </section>
 
@@ -175,11 +220,13 @@
     <div class="kicker">Trackside</div>
     <h2 style="color:var(--paper)">The Photo Wall</h2>
     <div class="pwall">
+      <img src="gal-grid.jpg" alt="Kart 335 rolling out ahead of the field" data-cap="Rolling out — #335 leads the pack to the grid" loading="lazy">
       <img src="action.jpg" alt="On the grid, Adams Motorsports Park" data-cap="On the grid — Adams Motorsports Park, 2025" loading="lazy">
       <img src="podium.jpg" alt="P1 trophy" data-cap="P1 — Adams Motorsports Park" loading="lazy">
       <img src="gal-corner1.jpg" alt="Cornering at speed" data-cap="Full send — race day at AMP" loading="lazy">
       <img src="gal-helmet.jpg" alt="Helmet and wheel" data-cap="Between sessions — October 2024" loading="lazy">
       <img src="gal-trophy1.jpg" alt="Trophy overhead" data-cap="Another one for the shelf" loading="lazy">
+      <img src="gal-cockpit.jpg" alt="Cole in the seat, suited up" data-cap="Strapped in — every sponsor rides along" loading="lazy">
       <img src="gal-visor.jpg" alt="Visor down" data-cap="Visor down — T4 Nations Cup paddock" loading="lazy">
       <img src="gal-corner2.jpg" alt="Chasing down the leader" data-cap="Hunting — AMP club race" loading="lazy">
       <img src="gal-trophy2.jpg" alt="P2 Chill Challenge" data-cap="P2 — SoCal Chill Challenge" loading="lazy">
