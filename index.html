@@ -105,6 +105,22 @@
     .stats div:nth-child(3){border-left:none}
     nav a:not(.cta){display:none}
   }
+
+  /* lead forms */
+  form.lead{max-width:720px}
+  form.lead label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+  form.lead input[type=text],form.lead input[type=email],form.lead textarea{display:block;width:100%;margin-top:6px;padding:12px;font:inherit;font-size:15px;text-transform:none;letter-spacing:0;background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:0}
+  form.lead .lgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin-bottom:14px}
+  form.lead .lwide{margin-bottom:6px}
+  form.lead fieldset.lchecks{border:0;margin:0 0 14px;padding:0}
+  form.lead fieldset.lchecks legend{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+  form.lead fieldset.lchecks label{display:inline-block;margin:0 16px 6px 0;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:14px}
+  form.lead button.btn{border:0;cursor:pointer;font-family:inherit}
+  form.lead button.btn:disabled{opacity:.6;cursor:default}
+  form.lead .lnote{margin-top:10px;font-size:13px;color:var(--grey)}
+  form.lead .err{margin-top:10px;font-size:14px;color:var(--red)}
+  form.lead .thanks{font-size:18px;font-weight:bold;padding:18px 0}
+  @media(max-width:760px){form.lead .lgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -118,8 +134,6 @@
       <a href="#gallery">Photos</a>
       <a href="#partners">Partners</a>
       <a href="#race-night">Race Nights</a>
-      <a href="karting-southern-california.html">Karting</a>
-      <a href="blog/">Blog</a>
       <a href="#sponsor" class="cta">Partner With Cole</a>
     </nav>
   </div>
@@ -179,15 +193,15 @@
         <div><b>Team USA — T4 Nations Cup, Spain</b><span>Tillotson world final. Selected off the California points win.</span></div>
         <em class="rtag usa">◆ TEAM USA</em>
       </div>
-      <div class="rrow">
+      <div class="rrow champ">
         <div class="ryr">24</div>
-        <div><b>Won T4NC California points</b><span>Earned the Spain world-final registration.</span></div>
-        <em class="rtag">✓ QUALIFIED</em>
+        <div><b>T4NC California Points Champion</b><span>Won the California points championship and earned the Spain world-final registration.</span></div>
+        <em class="rtag gold">🏆 CHAMPION</em>
       </div>
       <div class="rrow champ">
         <div class="ryr">23<i>–24</i></div>
-        <div><b>2× JR Class Championships</b><span>Adams Motorsports Park — plus 19 JR podiums across AMP, TriC &amp; LAKC.</span></div>
-        <em class="rtag gold">🏆 2× CHAMPION</em>
+        <div><b>JR Class Championship</b><span>Runner-up in 2023, champion in 2024 at Adams Motorsports Park — plus 19 JR podiums across AMP, TriC &amp; LAKC.</span></div>
+        <em class="rtag gold">🏆 CHAMPION</em>
       </div>
     </div>
     <style>
@@ -322,7 +336,26 @@
       <div class="tier"><h3>Supporting</h3><p>Kart placement, social features, event access.</p></div>
       <div class="tier"><h3>Technical</h3><p>In-kind partners: parts, services, facilities.</p></div>
     </div>
-    <p style="margin-top:28px"><a class="btn btn-red" href="mailto:tye@coleapparel.com?subject=Cole%20Gaddis%20Racing%20—%20Sponsorship">Request the Sponsorship Deck</a></p>
+    <form class="lead" data-thanks="Thank you. Tye will send a deck built around your company soon." style="margin-top:28px">
+      <input type="hidden" name="form_type" value="Sponsorship deck request">
+      <div style="display:none" aria-hidden="true"><label>Leave this empty<input type="text" name="bot_field" tabindex="-1" autocomplete="off"></label></div>
+      <div class="lgrid">
+        <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Work email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Company<input type="text" name="company" required autocomplete="organization"></label>
+        <label>Company website<input type="text" name="website" autocomplete="url" placeholder="optional"></label>
+      </div>
+      <fieldset class="lchecks"><legend>What interests you most?</legend>
+        <label><input type="checkbox" name="interests" value="Employee race nights"> Employee race nights</label>
+        <label><input type="checkbox" name="interests" value="Customer hospitality"> Customer hospitality</label>
+        <label><input type="checkbox" name="interests" value="Team merch"> Team merch</label>
+        <label><input type="checkbox" name="interests" value="Content for our channels"> Content for our channels</label>
+      </fieldset>
+      <label class="lwide">Anything we should know about your business?<textarea name="message" rows="3" placeholder="optional"></textarea></label>
+      <p><button type="submit" class="btn btn-red" data-label="Request the Sponsorship Deck">Request the Sponsorship Deck</button></p>
+      <p class="err" style="display:none">Something went wrong sending that. Please email <a href="mailto:tye@coleapparel.com" style="color:var(--red)">tye@coleapparel.com</a> directly.</p>
+      <p class="mono lnote">Prefer email? Write to <a href="mailto:tye@coleapparel.com" style="color:var(--red)">tye@coleapparel.com</a></p>
+    </form>
   </div>
 </section>
 
@@ -336,7 +369,21 @@
       <div><b>Built for team-building</b><p>Friendly competition that gets people from different departments talking to each other.</p></div>
       <div><b>Branded for your company</b><p>Optional co-branded team apparel, produced in-house by Cole Apparel.</p></div>
     </div>
-    <p style="margin-top:28px"><a class="btn btn-red" href="mailto:tye@coleapparel.com?subject=Employee%20Race%20Night">Plan a Race Night</a></p>
+    <form class="lead" data-thanks="Thank you. Tye will be in touch about planning a race night for your team." style="margin-top:28px">
+      <input type="hidden" name="form_type" value="Employee Race Night">
+      <div style="display:none" aria-hidden="true"><label>Leave this empty<input type="text" name="bot_field" tabindex="-1" autocomplete="off"></label></div>
+      <div class="lgrid">
+        <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Work email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Company<input type="text" name="company" required autocomplete="organization"></label>
+        <label>Company website<input type="text" name="website" autocomplete="url" placeholder="optional"></label>
+      </div>
+      
+      <label class="lwide">Roughly how many people, and any dates in mind?<textarea name="message" rows="3" placeholder="optional"></textarea></label>
+      <p><button type="submit" class="btn btn-red" data-label="Plan a Race Night">Plan a Race Night</button></p>
+      <p class="err" style="display:none">Something went wrong sending that. Please email <a href="mailto:tye@coleapparel.com" style="color:var(--red)">tye@coleapparel.com</a> directly.</p>
+      <p class="mono lnote">Prefer email? Write to <a href="mailto:tye@coleapparel.com" style="color:var(--red)">tye@coleapparel.com</a></p>
+    </form>
   </div>
 </section>
 
@@ -380,5 +427,28 @@
   <div class="wrap">© 2026 Cole Gaddis Racing · colegaddisracing.com</div>
 </footer>
 
+<script>
+(function(){
+  var HOOK="https://hook.us2.make.com/qfymnttipwhxhziudyxyd26oh1vqncwi";
+  document.querySelectorAll('form.lead').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var btn=f.querySelector('button[type=submit]');
+      btn.disabled=true; btn.textContent='Sending...';
+      var p=new URLSearchParams(), ints=[];
+      new FormData(f).forEach(function(v,k){ if(k==='interests'){ints.push(v);} else {p.append(k,v);} });
+      p.append('interests',ints.join(', '));
+      var thanks=f.getAttribute('data-thanks');
+      fetch(HOOK,{method:'POST',mode:'no-cors',body:p}).then(function(){
+        f.innerHTML='<p class="thanks"></p>';
+        f.querySelector('.thanks').textContent=thanks;
+      }).catch(function(){
+        btn.disabled=false; btn.textContent=btn.getAttribute('data-label');
+        f.querySelector('.err').style.display='block';
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
