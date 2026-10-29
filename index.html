@@ -10,7 +10,8 @@
 <meta property="og:image" content="https://colegaddisracing.com/action.jpg">
 <meta property="og:url" content="https://colegaddisracing.com">
 <link rel="canonical" href="https://colegaddisracing.com/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23111214%22/><text x=%2250%22 y=%2272%22 font-size=%2260%22 font-family=%22monospace%22 font-weight=%22bold%22 fill=%22%23ff6b00%22 text-anchor=%22middle%22>CG</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230d0e11%22/><path d=%22M0 78h100v22H0z%22 fill=%22%23232047%22/><path d=%22M48 78h52v22H40z%22 fill=%22%23BD1A2C%22/><text x=%2251%22 y=%2266%22 font-size=%2246%22 font-family=%22Arial Black,Arial,sans-serif%22 font-weight=%22900%22 font-style=%22italic%22 fill=%22%23E0DCDC%22 text-anchor=%22middle%22>CGR</text></svg>">
+<link rel="apple-touch-icon" href="cgr-mark.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Cole Gaddis","url":"https://colegaddisracing.com",
 "jobTitle":"Shifter Kart Racing Driver","description":"2025 AMP Shifter Champion. Team USA — Tillotson T4 Nations Cup. KZ shifter kart driver racing out of Southern California.",
@@ -19,7 +20,7 @@
 </script>
 <style>
   :root{
-    --ink:#111214; --paper:#f5f4f0; --red:#e04c00; --yellow:#ff6b00;
+    --ink:#0d0e11; --paper:#f2f0ee; --red:#BD1A2C; --yellow:#BD1A2C;
     --grey:#6b6b6b; --line:#d8d5cd;
     --mono:'Courier New',ui-monospace,monospace;
     --sans:'Helvetica Neue',Arial,sans-serif;
@@ -39,7 +40,12 @@
   nav a:hover{color:var(--yellow)}
   nav a.cta{background:var(--red);padding:8px 14px;font-weight:bold}
   /* hero */
-  .hero{background:linear-gradient(90deg,rgba(10,10,12,.92) 0%,rgba(10,10,12,.55) 60%,rgba(10,10,12,.25) 100%),url('hero.jpg') center right/cover no-repeat #0a0a0c;color:var(--paper);padding:96px 0 72px;position:relative;overflow:hidden}
+  .hero{background:#0a0a0c;color:var(--paper);padding:96px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;bottom:0;right:0;width:66%;z-index:0;
+    background:linear-gradient(90deg,rgba(10,10,12,.55),rgba(10,10,12,.2) 50%,rgba(10,10,12,.35)),url('hero-grid.webp') 35% 55%/cover no-repeat;
+    -webkit-mask:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 30%,#000 60%);mask:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 30%,#000 60%)}
+  .hero .wrap{position:relative;z-index:1}
+  @media(max-width:760px){.hero::before{width:100%;opacity:.45;background-position:40% center;-webkit-mask:linear-gradient(180deg,#000 30%,transparent);mask:linear-gradient(180deg,#000 30%,transparent)}}
   .hero::after{content:"";position:absolute;right:-40px;top:-40px;width:340px;height:340px;
     background:conic-gradient(#fff 0 25%,transparent 0 50%,#fff 0 75%,transparent 0);
     background-size:40px 40px;opacity:.06;transform:rotate(12deg)}
@@ -145,12 +151,129 @@
     #partners .wrap{gap:24px 28px!important}
   }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<style id="cgr-theme">
+/* ===== CGR theme (whole page) ===== */
+:root{--ink:#0d0e11;--paper:#f2f0ee;--red:#BD1A2C;--yellow:#BD1A2C;--grey:#9aa1ad;--line:#25272e;
+  --cgr-red:#BD1A2C;--cgr-red-t:#E0394B;--cgr-navy:#232047;--cgr-hi:#383F6B;--cgr-silver:#E0DCDC;
+  --cond:'Barlow Condensed','Arial Narrow',sans-serif;
+  --carbon-tex:linear-gradient(27deg,#141519 5px,transparent 5px) 0 5px,linear-gradient(207deg,#141519 5px,transparent 5px) 10px 0,linear-gradient(27deg,#1a1b20 5px,transparent 5px) 0 10px,linear-gradient(207deg,#1a1b20 5px,transparent 5px) 10px 5px,linear-gradient(90deg,#16171b 10px,transparent 10px),linear-gradient(#17181c 25%,#141518 25%,#141518 50%,transparent 50%,transparent 75%,#1b1c20 75%,#1b1c20)}
+body{background:#0d0e11;color:#d9dce2}
+/* header */
+body header{background:rgba(8,8,10,.94);backdrop-filter:blur(6px);border-bottom:1px solid #1f2127}
+body header::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(100deg,var(--cgr-navy) 0 38%,var(--cgr-silver) 38% 39.2%,var(--cgr-red) 39.2% 100%)}
+body header .wrap{height:64px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:46px;width:auto;display:block}
+body nav a{font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.1em;color:#d6d9df}
+body nav a:hover{color:#fff;box-shadow:inset 0 -2px 0 var(--cgr-red)}
+body nav a.cta{background:var(--cgr-red);color:#fff;padding:9px 18px;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);font-style:italic}
+body nav a.cta:hover{background:#d0223a;box-shadow:none}
+/* hero */
+body .plate{background:var(--cgr-red);font-family:var(--cond);font-weight:700;font-style:italic;font-size:16px;letter-spacing:.2em;padding:5px 16px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);box-shadow:none}
+body h1{font-family:var(--cond);font-weight:800;font-style:italic;font-size:clamp(52px,9vw,104px);line-height:.88;letter-spacing:0;color:#fff}
+body h1 em{color:var(--cgr-red-t)}
+body .hero p.sub{color:#c9ccd3}
+body .btn{font-family:var(--cond);font-weight:700;font-style:italic;font-size:17px;letter-spacing:.1em;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);padding:14px 30px;transition:background .2s,transform .2s}
+body .btn-red{background:var(--cgr-red)}
+body .btn-red:hover{background:#d0223a;opacity:1;transform:translateX(3px)}
+body .btn-ghost{border:0;background:rgba(224,220,220,.08);box-shadow:inset 0 0 0 2px var(--cgr-silver);color:var(--cgr-silver)}
+body .hero{border-bottom:0}
+/* stats */
+body .stats{position:relative;background:linear-gradient(100deg,#15132e 0%,var(--cgr-navy) 45%,#2c2a58 100%);color:#fff}
+body .stats::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--cgr-red)}
+body .stats::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;background:conic-gradient(#E0DCDC 0 25%,#0d0e11 0 50%,#E0DCDC 0 75%,#0d0e11 0) 0 0/12px 12px;z-index:2}
+body .stats div{border-left:1px solid rgba(224,220,220,.14);padding:26px 8px 24px}
+body .stats b{font-family:var(--cond);font-weight:800;font-style:italic;font-size:clamp(40px,5.5vw,60px);line-height:1;
+  background:linear-gradient(180deg,#fff 0%,#E0DCDC 45%,#8d8f9e 55%,#f2f0ee 75%,#bdbbc4 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+body .stats span{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:#c3c2d6}
+/* sections */
+section:not(#sponsor){background-color:#0d0e11;color:#d9dce2;position:relative}
+section:not(#sponsor):not(#gallery):not(#contact){background:var(--carbon-tex);background-color:#111216;background-size:20px 20px}
+body section:not(#sponsor) h2{font-family:var(--cond);font-weight:800;font-style:italic;font-size:clamp(36px,5vw,56px);line-height:.95;color:#fff!important;letter-spacing:.005em}
+body section:not(#sponsor) .kicker{display:flex;align-items:center;gap:12px;color:var(--cgr-silver)!important;font-size:12px;letter-spacing:.26em}
+body section:not(#sponsor) .kicker::before{content:"";flex:0 0 42px;height:4px;background:linear-gradient(90deg,var(--cgr-navy) 0 50%,var(--cgr-red) 50%);transform:skewX(-30deg)}
+section:not(#sponsor) p{color:#c4c8d0}
+section:not(#sponsor) strong{color:#fff}
+section:not(#sponsor) a[style*="var(--red)"]{color:var(--cgr-red-t)!important;text-decoration:none;border-bottom:1px solid currentColor}
+/* about */
+#about{padding-top:84px}
+body .photo{border:0;min-height:360px;background:#16171b;position:relative;clip-path:polygon(0 0,100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%);box-shadow:none}
+body #about .cols>div:last-child{position:relative}
+body #about .photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(100deg,var(--cgr-navy) 0 50%,var(--cgr-red) 50%)}
+/* results */
+body .results{border-top:3px solid var(--cgr-red)}
+body .rrow{border-bottom:1px solid #25272e;background:rgba(13,14,17,.55)}
+body .rrow:hover{background:#17181d;box-shadow:0 10px 26px rgba(0,0,0,.4)}
+body .rrow::before{background:var(--cgr-red)}
+body .rrow.champ{background:linear-gradient(90deg,rgba(189,26,44,.16),rgba(13,14,17,.55) 55%)}
+body .ryr{font-family:var(--cond);font-style:italic;font-weight:800;font-size:clamp(44px,5.4vw,64px);color:var(--cgr-red-t)}
+body .ryr::before{color:#fff;opacity:.3}
+body .ryr i{color:#8b8f9a}
+body .rrow b{font-family:var(--cond);font-weight:700;font-size:22px;letter-spacing:.03em;color:#fff}
+body .rrow span{color:#a3a8b2}
+body .rtag{font-family:var(--cond);font-style:italic;font-size:14px;letter-spacing:.12em;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);padding:8px 18px}
+body .rtag.gold{background:var(--cgr-red);color:#fff}
+body .rtag.podium{background:transparent;color:var(--cgr-silver);box-shadow:inset 0 0 0 2px var(--cgr-silver)}
+body .rtag.usa{background:var(--cgr-hi);color:#fff}
+/* gallery */
+body #gallery{background:#08080a!important}
+body #gallery::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:conic-gradient(#E0DCDC 0 25%,#08080a 0 50%,#E0DCDC 0 75%,#08080a 0) 0 0/14px 14px;opacity:.85}
+body .pwall img{border:0;outline:2px solid transparent;outline-offset:-2px}
+body .pwall img:hover{outline-color:var(--cgr-red);transform:translateY(-5px) scale(1.02);box-shadow:0 16px 36px rgba(0,0,0,.6),6px 6px 0 var(--cgr-navy)}
+body #lbimg{border-color:var(--cgr-red)}
+body .lbnav:hover{color:var(--cgr-red-t)}
+/* race night */
+body #race-night{border-top:1px solid #1d1f25}
+body .menu{background:transparent;border:0;gap:10px}
+body .menu div{background:linear-gradient(160deg,#17181d,#0f1013);border:1px solid #2a2c33;border-top:3px solid var(--cgr-hi);padding:22px}
+body .menu div:nth-child(2){border-top-color:var(--cgr-red)}
+body .menu div:hover{background:#1a1b21;border-top-color:var(--cgr-red)}
+body .menu b{font-family:var(--cond);font-weight:700;font-size:21px;letter-spacing:.04em;color:#fff}
+body .menu p{color:#a3a8b2}
+section:not(#sponsor) form.lead{background:rgba(10,11,13,.75);border:1px solid #2a2c33;padding:28px;position:relative}
+section:not(#sponsor) form.lead::before{content:"";position:absolute;left:-1px;right:-1px;top:-10px;height:10px;background:conic-gradient(#E0DCDC 0 25%,#0d0e11 0 50%,#E0DCDC 0 75%,#0d0e11 0) 0 0/10px 10px}
+section:not(#sponsor) form.lead label,section:not(#sponsor) form.lead fieldset.lchecks legend{color:var(--cgr-silver)}
+section:not(#sponsor) form.lead input[type=text],section:not(#sponsor) form.lead input[type=email],section:not(#sponsor) form.lead textarea{background:#15161a;color:#fff;border:1px solid #3a3d46;border-bottom:2px solid #5b616d}
+section:not(#sponsor) form.lead input:focus,section:not(#sponsor) form.lead textarea:focus{outline:0;border-color:var(--cgr-hi);border-bottom-color:var(--cgr-red)}
+section:not(#sponsor) form.lead .lnote{color:#8b919c}
+section:not(#sponsor) form.lead .thanks{color:#fff}
+/* partners */
+body #partners{padding-bottom:36px}
+body #partners .wrap img:hover{filter:drop-shadow(0 16px 28px rgba(189,26,44,.5))}
+/* contact */
+body #contact{background:radial-gradient(ellipse 60% 90% at 85% 50%,rgba(56,63,107,.55),transparent 70%),linear-gradient(110deg,#0b0b0e 0%,#0d0e11 50%,var(--cgr-navy) 100%)!important;overflow:hidden;padding:84px 0}
+body #contact::after{content:"";position:absolute;right:-30px;top:0;bottom:0;width:180px;background:conic-gradient(#E0DCDC 0 25%,transparent 0 50%,#E0DCDC 0 75%,transparent 0) 0 0/30px 30px;opacity:.08;transform:skewX(-14deg)}
+body #contact .wrap{position:relative;z-index:1}
+body .contact a{color:#fff}
+body .contact .big a{border-bottom:3px solid var(--cgr-red);padding-bottom:2px}
+body .contact .big a:hover{color:var(--cgr-red-t)}
+body .contact .mono a{color:var(--cgr-red-t)}
+/* footer */
+body footer{background:#050506;color:#7d828c;position:relative;padding:22px 0;border-top:0}
+body footer::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(100deg,var(--cgr-navy) 0 38%,var(--cgr-silver) 38% 39.2%,var(--cgr-red) 39.2% 100%)}
+body footer .wrap{display:flex;align-items:center;gap:14px}
+body footer .wrap::before{content:"";width:74px;height:22px;background:url('cgr-mark.png') left center/contain no-repeat;opacity:.85}
+@media(max-width:760px){
+  body header .wrap{height:auto}
+  .brand img{height:38px}
+  body nav a{font-size:14px}
+  body h1{font-size:clamp(50px,15vw,72px)}
+  body .stats div:nth-child(3){border-left:none}
+  body .stats div:nth-child(n+3){border-top:1px solid rgba(224,220,220,.14)}
+  section:not(#sponsor) form.lead{padding:20px 16px}
+  body .photo{clip-path:polygon(0 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%)}
+}
+body #race-night{background:var(--carbon-tex)!important;background-color:#111216!important;background-size:20px 20px!important}
+@media(max-width:700px){body .rrow{grid-template-columns:78px 1fr}body .ryr{font-size:38px;white-space:nowrap}body .ryr i{font-size:.5em}}
+</style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="brand">COLE GADDIS <span>RACING</span></div>
+    <a class="brand" href="#" aria-label="Cole Gaddis Racing — home"><img src="cgr-logo-header.png" width="124" height="46" alt="Cole Gaddis Racing"></a>
     <nav>
       <a href="#about">About</a>
       <a href="#results">Results</a>
@@ -179,7 +302,7 @@
     <div><b>37</b><span>Races</span></div>
     <div><b>32</b><span>Podiums</span></div>
     <div><b>19</b><span>Wins</span></div>
-    <div><b>4</b><span>Championships</span></div>
+    <div><b>3</b><span>Championships</span></div>
   </div>
 </div>
 
@@ -247,7 +370,7 @@
       .rtag.gold{background:var(--yellow);color:#fff}
       .rtag.podium{background:var(--ink);color:var(--yellow)}
       .rtag.usa{background:#1d3f8f;color:#fff}
-      .rrow.champ{background:linear-gradient(90deg,rgba(255,107,0,.06),transparent 55%)}
+      .rrow.champ{background:linear-gradient(90deg,rgba(189,26,44,.06),transparent 55%)}
       @media(max-width:700px){
         .rrow{grid-template-columns:64px 1fr}
         .rtag{grid-column:2;justify-self:start;margin-top:2px}
@@ -319,68 +442,392 @@
 })();
 </script>
 
-<section id="sponsor" style="background:#ecebe4">
+<section id="sponsor" class="sp">
+  <style>
+    .sp{--navy:#232047;--blue:#383F6B;--cred:#BD1A2C;--cred2:#E0394B;--chrome:linear-gradient(180deg,#ffffff 0%,#d9dde3 38%,#8d96a3 52%,#e8ebef 70%,#b7bec8 100%);
+      --carbon:#0d0e11;--txt:#e9ebef;--mut:#9aa1ad;--cond:'Barlow Condensed','Oswald','Arial Narrow',sans-serif;
+      position:relative;padding:0 0 120px;color:var(--txt);overflow:hidden;
+      background:
+        linear-gradient(27deg,#141519 5px,transparent 5px) 0 5px,
+        linear-gradient(207deg,#141519 5px,transparent 5px) 10px 0,
+        linear-gradient(27deg,#1b1c21 5px,transparent 5px) 0 10px,
+        linear-gradient(207deg,#1b1c21 5px,transparent 5px) 10px 5px,
+        linear-gradient(90deg,#17181c 10px,transparent 10px),
+        linear-gradient(#18191d 25%,#151619 25%,#151619 50%,transparent 50%,transparent 75%,#1d1e22 75%,#1d1e22);
+      background-color:#121316;background-size:20px 20px;
+      clip-path:polygon(0 0,100% 0,100% calc(100% - 70px),0 100%)}
+    .sp .wrap{position:relative;z-index:2}
+    .sp *{box-sizing:border-box}
+    /* top livery stripe */
+    .sp-livery{height:14px;background:linear-gradient(100deg,var(--navy) 0 38%,#E0DCDC 38% 40%,var(--cred) 40% 100%)}
+    .sp-chk{height:18px;background:conic-gradient(#f2f3f5 0 25%,#0b0b0d 0 50%,#f2f3f5 0 75%,#0b0b0d 0) 0 0/18px 18px;opacity:.9}
+    /* hero */
+    .sp-hero{position:relative;padding:84px 0 70px;
+      background:radial-gradient(ellipse 45% 60% at 78% 62%,rgba(72,80,140,.28),transparent 70%),radial-gradient(ellipse 30% 40% at 88% 70%,rgba(189,26,44,.22),transparent 70%),linear-gradient(180deg,rgba(10,11,13,.55),rgba(10,11,13,.85))}
+    .sp-hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+      background:repeating-linear-gradient(-12deg,transparent 0 46px,rgba(255,255,255,.035) 46px 48px,transparent 48px 120px)}
+    .sp-hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:20px;align-items:center}
+    .sp-kick{font-family:var(--mono);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#E0DCDC;display:flex;align-items:center;gap:12px;margin-bottom:16px}
+    .sp-kick::before{content:"";width:42px;height:4px;background:linear-gradient(90deg,var(--navy) 0 50%,var(--cred) 50%);transform:skewX(-30deg)}
+    .sp h2{font-family:var(--cond);font-weight:800;font-style:italic;font-size:clamp(40px,5.2vw,64px);line-height:.92;text-transform:uppercase;letter-spacing:-.005em;margin:0 0 20px;color:#fff}
+    .sp h2 .ch{background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sp h2 .rd{color:var(--cred2)}
+    .sp-lede{font-size:17px;color:#cfd3da;max-width:540px}
+    .sp-pos{margin-top:14px;font-family:var(--mono);font-size:13px;color:var(--mut);max-width:540px;border-left:3px solid var(--blue);padding-left:12px}
+    .sp-btns{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+    .sp-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:800;font-size:19px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:14px 28px;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);transition:transform .2s,filter .2s}
+    .sp-btn:hover{transform:translateX(4px);filter:brightness(1.12)}
+    .sp-btn.red{background:var(--cred);color:#fff}
+    .sp-btn.ghost{background:rgba(255,255,255,.08);color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
+    .sp-vis{position:relative;margin-right:-150px;margin-left:-20px;padding:10px 0 30px}
+    .sp-vis .lg{display:block;width:62%;max-width:360px;margin:0 0 -6px 18%;position:relative;z-index:3;filter:drop-shadow(0 10px 24px rgba(0,0,0,.8))}
+    .sp-vis .kart{position:relative;z-index:2;display:block;width:100%;height:auto;max-width:665px;filter:drop-shadow(0 30px 28px rgba(0,0,0,.85)) drop-shadow(0 0 40px rgba(72,80,140,.25))}
+    .sp-vis::before{content:"";position:absolute;left:-30%;right:20%;top:44%;height:42%;z-index:1;
+      background:repeating-linear-gradient(180deg,transparent 0 11px,rgba(255,255,255,.07) 11px 12px);
+      -webkit-mask:linear-gradient(90deg,transparent,#000 60%,transparent);mask:linear-gradient(90deg,transparent,#000 60%,transparent);transform:skewX(-24deg)}
+    .sp-vis::after{content:"";position:absolute;left:8%;right:6%;bottom:22px;height:34px;z-index:1;border-radius:50%;
+      background:radial-gradient(ellipse at center,rgba(0,0,0,.9),transparent 70%)}
+    .sp-vis .cap{position:absolute;right:120px;bottom:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#7d8390;z-index:3}
+    /* spec bar */
+    .sp-spec{display:grid;grid-template-columns:1.25fr 1fr .8fr 1fr 1fr;background:#0a0b0d;border-top:1px solid #2a2c33;border-bottom:1px solid #2a2c33}
+    .sp-spec div{padding:18px 22px;border-left:1px solid #24262c;position:relative}
+    .sp-spec div:first-child{border-left:0}
+    .sp-spec small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+    .sp-spec b{font-family:var(--cond);font-weight:700;font-size:22px;letter-spacing:.03em;text-transform:uppercase;color:#fff}
+    .sp-spec .tbd b{color:#E0DCDC}
+    .sp-spec .spd b{color:var(--cred2);font-style:italic}
+    .sp-vis .mph{position:absolute;z-index:3;left:2%;bottom:14%;transform:skewX(-14deg);background:var(--cred);padding:7px 14px;box-shadow:6px 6px 0 var(--navy)}
+    .sp-vis .mph b{display:block;transform:skewX(14deg);font-family:var(--cond);font-weight:800;font-style:italic;font-size:20px;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+    .sp-spec .tbd b::after{content:"TO BE ANNOUNCED";display:inline-block;margin-left:10px;vertical-align:middle;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:#0b0b0d;background:#E0DCDC;padding:2px 6px}
+    /* numbers */
+    .sp-nums{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:56px 0 0;border:1px solid #2a2c33;background:rgba(8,9,11,.6)}
+    .sp-nums div{padding:24px 14px 20px;text-align:center;border-left:1px solid #24262c;position:relative}
+    .sp-nums div:first-child{border-left:0}
+    .sp-nums b{display:block;font-family:var(--cond);font-weight:800;font-style:italic;font-size:clamp(46px,6vw,78px);line-height:.9;background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sp-nums div.hl b{background:linear-gradient(180deg,#ff6a74,#BD1A2C 55%,#9c0f1b);-webkit-background-clip:text;background-clip:text}
+    .sp-nums span{display:block;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+    .sp-src{font-family:var(--mono);font-size:11px;color:#6d7380;margin-top:8px;letter-spacing:.06em}
+    /* headings */
+    .sp-h{display:flex;align-items:baseline;gap:16px;margin:68px 0 24px}
+    .sp-h i{font-style:italic;font-family:var(--cond);font-weight:800;font-size:64px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px #4a4f5a}
+    .sp-h h3{font-family:var(--cond);font-weight:800;font-style:italic;font-size:clamp(28px,3.6vw,42px);text-transform:uppercase;color:#fff;line-height:1}
+    .sp-h p{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:6px}
+    /* why */
+    .sp-why{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:0;border:1px solid #2a2c33;background:#0b0c0f}
+    .sp-why .q{padding:40px 36px;background:linear-gradient(135deg,var(--navy),#121a47);clip-path:polygon(0 0,100% 0,88% 100%,0 100%);position:relative}
+    .sp-why .q::after{content:"";position:absolute;left:0;bottom:0;width:62%;height:6px;background:var(--cred)}
+    .sp-why .q h4{font-family:var(--cond);font-weight:800;font-style:italic;font-size:clamp(30px,3.6vw,44px);line-height:.98;text-transform:uppercase;color:#fff;padding-right:40px}
+    .sp-why .q h4 em{font-style:inherit;color:#f0939c}
+    .sp-why .pts{padding:28px 32px;display:grid;gap:20px}
+    .sp-why .pts>div{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start}
+    .sp-why .pts i{font-style:italic;font-family:var(--cond);font-weight:800;font-size:38px;line-height:.9;color:var(--cred2)}
+    .sp-why .pts b{display:block;font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+    .sp-why .pts p{font-size:14px;color:#b9bec7}
+    /* logo map */
+    .sp-map{display:grid;align-items:stretch;grid-template-columns:1.45fr .55fr;gap:0;border:1px solid #2a2c33;background:#0b0c0f}
+    .sp-diag{position:relative;padding:56px 28px 44px;overflow:hidden;
+      background:radial-gradient(ellipse 60% 55% at 50% 60%,rgba(72,80,140,.22),transparent 70%),
+        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) 0 0/32px 32px,#0c0d11}
+    .sp-diag .tag{position:absolute;left:20px;top:16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#7d8390}
+    .sp-diag .tag b{color:#E0DCDC;font-weight:normal}
+    .sp-diag .kw{position:relative;max-width:640px;margin:0 auto}
+    .sp-diag .kw img{display:block;width:100%;height:auto;filter:drop-shadow(0 22px 18px rgba(0,0,0,.85))}
+    .sp-diag .kw::after{content:"";position:absolute;left:4%;right:4%;bottom:-10px;height:22px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(0,0,0,.85),transparent 70%);z-index:-1}
+    .sp-diag .floor{position:absolute;left:0;right:0;bottom:30px;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent)}
+    .sp-driver{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;border:1px solid #2a2c33;border-top:0;background:#0b0c0f}
+    .sp-driver figure{margin:0;position:relative;overflow:hidden;min-height:240px}
+    .sp-driver figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 40%}
+    .sp-driver figcaption{position:absolute;left:0;bottom:0;right:0;padding:26px 16px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#e9ebef;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+    .sp-driver .dl{padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+    .sp-driver .dl h5{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);font-weight:normal}
+    .sp-photo{position:relative;overflow:hidden}
+    .sp-photo img{display:block;width:100%;height:auto;filter:saturate(.85) contrast(1.05)}
+    .sp-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(11,12,15,.85));pointer-events:none}
+    .pin{position:absolute;transform:translate(-50%,-50%);z-index:2;width:34px;height:34px;border-radius:50%;background:var(--cred);color:#fff;
+      font-family:var(--cond);font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 0 0 3px #fff,0 6px 18px rgba(0,0,0,.6)}
+    .pin::before{content:"";position:absolute;inset:-10px;border-radius:50%;border:2px solid rgba(189,26,44,.7);animation:sppulse 2.2s infinite}
+    @keyframes sppulse{0%{transform:scale(.7);opacity:1}100%{transform:scale(1.5);opacity:0}}
+    .pin.b{background:var(--blue)} .pin.b::before{border-color:rgba(72,80,140,.75)}
+    .sp-legend{padding:26px 24px;display:flex;flex-direction:column;gap:14px;justify-content:center}
+    .sp-legend>div{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start}
+    .sp-legend em{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--cred);color:#fff;font-family:var(--cond);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+    .sp-legend em.b{background:var(--blue)}
+    .sp-legend b{display:block;font-family:var(--cond);font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.04em;color:#fff;line-height:1.1}
+    .sp-legend span{font-size:12.5px;color:var(--mut)}
+    .sp-legend>.off{display:block;margin-top:6px;padding-top:14px;border-top:1px dashed #33363e;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7d8390}
+    /* activation board */
+    .sp-board{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#24262c;border:1px solid #24262c}
+    .sp-board div{background:#0e0f12;padding:22px 20px 24px;position:relative;transition:background .25s,transform .25s}
+    .sp-board div::before{content:attr(data-n);display:block;font-family:var(--cond);font-weight:800;font-style:italic;font-size:30px;line-height:1;color:transparent;-webkit-text-stroke:1.2px #5b616d;margin-bottom:14px}
+    .sp-board div::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--navy),var(--cred));transition:width .3s}
+    .sp-board div:hover{background:#15161b;transform:translateY(-3px)}
+    .sp-board div:hover::after{width:100%}
+    .sp-board div:hover::before{-webkit-text-stroke-color:var(--cred2)}
+    .sp-board b{display:block;font-family:var(--cond);font-weight:700;font-size:19px;letter-spacing:.04em;text-transform:uppercase;color:#fff;margin-bottom:6px}
+    .sp-board p{font-size:13.5px;color:#a9afb9}
+    /* tiers */
+    .sp-tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .sp-tier{position:relative;background:#0e0f12;border:1px solid #2a2c33;padding:0 0 22px;transition:transform .25s,border-color .25s,box-shadow .25s}
+    .sp-tier:hover{transform:translateY(-6px);border-color:#5b616d;box-shadow:0 22px 40px rgba(0,0,0,.55)}
+    .sp-tier .hd{position:relative;padding:20px 20px 16px;background:linear-gradient(135deg,#1a1c22,#101114);clip-path:polygon(0 0,100% 0,100% 78%,0 100%);margin-bottom:6px;min-height:112px}
+    .sp-tier .pos{position:absolute;right:14px;top:6px;font-family:var(--cond);font-weight:800;font-style:italic;font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.22)}
+    .sp-tier small{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+    .sp-tier h4{font-family:var(--cond);font-weight:800;font-style:italic;font-size:30px;line-height:1;text-transform:uppercase;color:#fff;margin-top:6px}
+    .sp-tier ul{list-style:none;margin:0 20px;padding:0}
+    .sp-tier li{display:flex;gap:10px;align-items:baseline;font-size:13.5px;color:#c3c8d0;padding:9px 0;border-bottom:1px dashed #2c2f36}
+    .sp-tier li::before{content:"";flex:0 0 8px;height:8px;background:var(--cred);transform:skewX(-20deg) translateY(-1px)}
+    .sp-tier .pr{margin:16px 20px 0;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7d8390}
+    .sp-tier.p1{border-color:var(--cred)}
+    .sp-tier.p1 .hd{background:linear-gradient(135deg,var(--cred),#7a0f1c)}
+    .sp-tier.p1 .pos{-webkit-text-stroke-color:rgba(255,255,255,.55)}
+    .sp-tier.p1 small{color:#ffd0d4}
+    .sp-tier.p2 .hd{background:linear-gradient(135deg,var(--navy),#16142f)}
+    .sp-tier .lim{margin:4px 20px 4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(189,26,44,.14);border:1px solid rgba(189,26,44,.5);padding:6px 9px}
+    .sp-tier .pr.hi{color:#fff;font-size:12px}.sp-tier .pr.hi b{font-family:var(--cond);font-style:italic;font-weight:800;font-size:30px;letter-spacing:.02em;color:var(--cred);vertical-align:-3px;margin:0 2px}
+    .sp-tier .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 20px 6px}
+    .sp-tier .chips span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#cfd3da;border:1px dashed #4a4e58;padding:4px 7px;transform:skewX(-10deg)}
+    .sp-tier.p1::after{content:"FLAGSHIP";position:absolute;top:-11px;left:20px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;background:#fff;color:#0b0b0d;padding:3px 8px}
+    /* cta + form */
+    .sp-cta{margin-top:68px;position:relative;border:1px solid #2a2c33;background:linear-gradient(120deg,#0b0c0f 0%,#0b0c0f 55%,#232047 100%)}
+    .sp-cta .chk{height:22px;background:conic-gradient(#f2f3f5 0 25%,#0b0b0d 0 50%,#f2f3f5 0 75%,#0b0b0d 0) 0 0/22px 22px}
+    .sp-cta .in{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;padding:40px 36px 36px}
+    .sp-cta h3{font-family:var(--cond);font-weight:800;font-style:italic;font-size:clamp(34px,4.4vw,54px);line-height:.95;text-transform:uppercase;color:#fff}
+    .sp-cta h3 span{color:var(--cred2)}
+    .sp-cta .side p{color:#b9bec7;margin-top:14px;font-size:15px}
+    .sp-cta .mail{display:inline-block;margin-top:20px;font-family:var(--mono);font-size:17px;color:#fff;text-decoration:none;border-bottom:2px solid var(--cred)}
+    .sp-cta .mark{margin-top:26px;width:150px;opacity:.9}
+    .sp form.lead label,.sp form.lead fieldset.lchecks legend{color:#E0DCDC}
+    .sp form.lead input[type=text],.sp form.lead input[type=email],.sp form.lead textarea{background:#15161a;color:#fff;border:1px solid #3a3d46;border-bottom:2px solid #5b616d;transition:border-color .2s}
+    .sp form.lead input:focus,.sp form.lead textarea:focus{outline:0;border-color:var(--blue);border-bottom-color:var(--cred)}
+    .sp form.lead fieldset.lchecks label{color:#d5d9df}
+    .sp form.lead input[type=checkbox]{accent-color:var(--cred)}
+    .sp form.lead .lnote{color:#8b919c}
+    .sp form.lead .lnote a,.sp form.lead .err a{color:#f0939c!important}
+    .sp form.lead button.sp-btn{border:0;cursor:pointer;background:var(--cred);color:#fff}
+    .sp form.lead .thanks{color:#fff}
+
+    /* film strip */
+    .sp-film{position:relative;margin:56px 0 0;background:#060607;padding:14px 0;transform:skewY(-2deg)}
+    .sp-film::before,.sp-film::after{content:"";position:absolute;left:0;right:0;height:8px;
+      background:repeating-linear-gradient(90deg,transparent 0 10px,rgba(255,255,255,.18) 10px 22px,transparent 22px 32px)}
+    .sp-film::before{top:3px}.sp-film::after{bottom:3px}
+    .sp-film .row{display:grid;grid-template-columns:1.6fr .75fr .9fr 1.6fr;gap:6px;height:330px}
+    .sp-film figure{margin:0;position:relative;overflow:hidden}
+    .sp-film img{width:100%;height:calc(100% + 40px);margin-top:-20px;object-fit:cover;display:block;transform:skewY(2deg);filter:saturate(.95) contrast(1.05);transition:transform .5s}
+    .sp-film figure:hover img{transform:skewY(2deg) scale(1.05)}
+    .sp-film figcaption{position:absolute;left:12px;bottom:12px;transform:skewY(2deg);font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.6);padding:4px 8px;border-left:3px solid var(--cred)}
+    /* portrait in why */
+    .sp-why{grid-template-columns:.85fr .78fr 1fr!important}
+    .sp-why .pic{position:relative;overflow:hidden;min-height:400px;background:radial-gradient(ellipse 70% 55% at 50% 40%,#1a1d33,#0b0c0f 75%)}
+    .sp-why .pic::before{content:"";position:absolute;inset:-10% -30%;z-index:0;transform:skewX(-14deg);
+      background:linear-gradient(90deg,transparent 0 28%,var(--navy) 28% 56%,#E0DCDC 56% 57.4%,var(--cred) 57.4% 66%,transparent 66%)}
+    .sp-why .pic img{position:absolute;z-index:1;left:50%;bottom:0;height:100%;width:auto;max-width:none;transform:translateX(-50%);filter:drop-shadow(0 14px 22px rgba(0,0,0,.55))}
+    .sp-why .pic::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(0deg,rgba(11,12,15,.92),rgba(11,12,15,.35) 16%,transparent 32%)}
+    .sp-why .pic span{position:absolute;left:14px;bottom:12px;z-index:3;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#fff}
+    .sp-why .q{clip-path:none!important}
+    /* cta photo */
+    .sp-cta{background:linear-gradient(100deg,rgba(11,12,15,.95) 0%,rgba(11,12,15,.84) 40%,rgba(35,32,71,.74) 100%),url('cta-action.webp') 30% 40%/cover no-repeat!important}
+    /* banner photo texture */
+    .sp-hero::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:url('strip-corner2.webp') center 60%/cover no-repeat;opacity:.13;filter:grayscale(1) contrast(1.2);
+      -webkit-mask:linear-gradient(90deg,transparent 25%,#000 70%);mask:linear-gradient(90deg,transparent 25%,#000 70%)}
+    @media(max-width:900px){
+      .sp-why{grid-template-columns:1fr!important}.sp-why .pic{min-height:440px;order:-1}.sp-why .pic::before{inset:-10% -10%}.sp-why .pic img{height:104%}
+      .sp-film .row{grid-template-columns:1.4fr 1fr;grid-template-rows:220px 220px;height:auto}
+      .sp-hero .wrap,.sp-why,.sp-map,.sp-cta .in{grid-template-columns:1fr}
+      .sp-vis{order:-1;margin-right:0;max-width:600px;margin-left:auto;margin-right:auto}.sp-vis .cap{right:12px}
+      .sp-driver{grid-template-columns:1fr}.sp-driver figure{min-height:220px}
+      .sp-spec{grid-template-columns:repeat(2,1fr)}
+      .sp-spec div:nth-child(odd){border-left:0}.sp-spec div:nth-child(even){border-left:1px solid #24262c}.sp-spec div:last-child{grid-column:1/-1}
+      .sp-spec div:nth-child(n+3){border-top:1px solid #24262c}
+      .sp-nums{grid-template-columns:repeat(3,1fr)}
+      .sp-nums div:nth-child(4){border-left:0}
+      .sp-nums div:nth-child(n+4){border-top:1px solid #24262c}
+      .sp-board{grid-template-columns:repeat(2,1fr)}
+      .sp-tiers{grid-template-columns:repeat(2,1fr);row-gap:26px}
+      .sp-why .q{clip-path:polygon(0 0,100% 0,100% 88%,0 100%);padding-bottom:52px}
+      .sp-photo::after{background:linear-gradient(180deg,transparent 70%,rgba(11,12,15,.85))}
+    }
+    @media(max-width:560px){
+      .sp{padding-bottom:90px;clip-path:polygon(0 0,100% 0,100% calc(100% - 40px),0 100%)}
+      .sp-hero{padding:40px 0 44px;background:radial-gradient(ellipse 80% 30% at 50% 22%,rgba(72,80,140,.3),transparent 70%),linear-gradient(180deg,rgba(10,11,13,.55),rgba(10,11,13,.85))}
+      .sp-btn{flex:1 1 100%;justify-content:center}
+      .sp-spec b{font-size:19px}
+      .sp-spec .tbd b::after{display:block;margin:6px 0 0;width:max-content}
+      .sp-nums{grid-template-columns:repeat(2,1fr)}
+      .sp-nums div{border-left:1px solid #24262c!important;border-top:1px solid #24262c}
+      .sp-nums div:nth-child(odd){border-left:0!important}
+      .sp-nums div:nth-child(-n+2){border-top:0}
+      .sp-nums div:last-child{grid-column:1/-1;border-left:0!important}
+      .sp-h{margin:60px 0 20px}.sp-h i{font-size:46px}
+      .sp-tiers{grid-template-columns:1fr}
+      .sp-board div{padding:16px 14px 18px}.sp-board b{font-size:16px}.sp-board p{font-size:12.5px}.sp-board div::before{font-size:24px;margin-bottom:8px}
+      .sp-why .q{padding:30px 22px 46px}.sp-why .pts{padding:24px 20px}
+      .pin{width:24px;height:24px;font-size:13px;box-shadow:0 0 0 2px #fff,0 4px 10px rgba(0,0,0,.6)}.pin::before{inset:-6px}
+      .sp-diag{padding:44px 10px 34px}.sp-diag .tag{font-size:9px;letter-spacing:.12em;left:12px;top:12px}.sp-driver .dl{padding:22px 20px}
+      .sp-vis .lg{width:70%;margin-left:15%}
+      .sp-cta .in{padding:28px 20px}
+    }
+  </style>
+
+  <div class="sp-livery"></div>
+
+  <div class="sp-hero">
+    <div class="wrap">
+      <div>
+        <div class="sp-kick">Sponsorship · 2027 Season</div>
+        <h2><span class="ch">Partner with Cole</span><br><span class="rd">Turnkey activation,</span><br>not just a logo</h2>
+        <p class="sp-lede">Sponsorship pays off when it's activated. Every Cole Gaddis Racing partnership comes with a working activation program and documented reporting — so you see what you got.</p>
+        <p class="sp-pos">Cole Gaddis Racing is a motorsports marketing company for businesses that market themselves through racing.</p>
+        <div class="sp-btns">
+          <a class="sp-btn red" href="#sp-deck">Request the deck &rarr;</a>
+          <a class="sp-btn ghost" href="mailto:tye@coleapparel.com">Email Tye</a>
+        </div>
+      </div>
+      <div class="sp-vis">
+        <img class="lg" src="cgr-logo.png" alt="Cole Gaddis Racing — CGR">
+        <img class="kart" src="kart-angle.webp" width="665" height="287" alt="CRG Road Rebel KZ shifter kart">
+        <span class="mph"><b>Your brand at 90+ mph</b></span>
+        <span class="cap">2027 · CRG Road Rebel · KZ125</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-spec">
+    <div><small>2027 Class</small><b>Pro Kart KZ125 Shifter</b></div>
+    <div><small>Chassis</small><b>CRG Road Rebel</b></div>
+    <div class="spd"><small>Top speed</small><b>90+ mph</b></div>
+    <div class="tbd"><small>2027 Schedule</small><b>TBD</b></div>
+    <div><small>Home base</small><b>Los Angeles, CA</b></div>
+  </div>
+
+  <div class="sp-chk"></div>
+
   <div class="wrap">
-    <div class="kicker">Sponsorship</div>
-    <h2>Partner with Cole — turnkey activation, not just a logo</h2>
-    <p style="max-width:720px;margin-bottom:28px">Sponsorship pays off when it's activated. Every Cole Gaddis Racing partnership comes with a working activation program and documented reporting — so you see what you got.</p>
-    <style>
-      .why{background:var(--ink);color:var(--paper);padding:32px 28px;margin:0 0 28px;border-left:6px solid var(--yellow)}
-      .why .wk{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:8px}
-      .why h3{font-size:clamp(22px,3.4vw,32px);line-height:1.15;text-transform:uppercase;margin-bottom:18px}
-      .why h3 em{font-style:normal;color:var(--yellow)}
-      .why .wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-      .why b{display:block;font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:4px}
-      .why p{font-size:14px;color:#cfccc4}
-      @media(max-width:760px){.why .wgrid{grid-template-columns:1fr}.why{padding:26px 20px}}
-    </style>
-    <div class="why">
-      <div class="wk">Why Cole</div>
-      <h3>Most drivers offer a decal.<br><em>Cole offers a marketing department.</em></h3>
-      <div class="wgrid">
-        <div><b>In-house production</b><p>Co-branded merch and gear made in-house by Cole Apparel — no middleman between your logo and the finished product.</p></div>
-        <div><b>A business network</b><p>Through Cole Apparel, partners get introductions to local businesses most athletes never get access to.</p></div>
-        <div><b>A champion who shows up</b><p>2025 AMP Shifter Champion, Team USA in Spain, 86% podium rate — run like a professional operation.</p></div>
+    <div class="sp-nums">
+      <div><b>37</b><span>Races</span></div>
+      <div><b>32</b><span>Podiums</span></div>
+      <div><b>19</b><span>Wins</span></div>
+      <div><b>3</b><span>Championships</span></div>
+      <div class="hl"><b>86%</b><span>Podium rate</span></div>
+    </div>
+    <p class="sp-src">Career record to date · 2025 AMP Shifter Champion · Team USA, Tillotson T4 Nations Cup (Spain)</p>
+  </div>
+  <div class="sp-film">
+    <div class="row">
+      <figure><img src="strip-corner1.webp" alt="Cole at speed through the corner at Adams Motorsports Park" loading="lazy"><figcaption>Full send · AMP</figcaption></figure>
+      <figure><img src="strip-trophy.webp" alt="Cole with the P2 trophy at the SoCal Chill Challenge" loading="lazy" style="object-position:50% 20%"><figcaption>P2 · Chill Challenge</figcaption></figure>
+      <figure><img src="strip-studio.webp" alt="Cole suited up beside his kart" loading="lazy" style="object-position:60% 20%;filter:brightness(1.3) contrast(1.05)"><figcaption>Suited up</figcaption></figure>
+      <figure><img src="strip-corner2.webp" alt="Cole hunting down the leader at an AMP club race" loading="lazy" style="object-position:60% 60%"><figcaption>Hunting · AMP club race</figcaption></figure>
+    </div>
+  </div>
+  <div class="wrap">
+
+    <div class="sp-h"><i>01</i><div><h3>Why Cole</h3><p>More than a sticker on a kart</p></div></div>
+    <div class="sp-why">
+      <div class="q"><h4>Most drivers offer a decal.<br><em>Cole offers a marketing department.</em></h4></div>
+      <div class="pic"><img src="why-cole.webp" width="640" height="1005" alt="Cole Gaddis" loading="lazy"><span>Cole Gaddis · Driver</span></div>
+      <div class="pts">
+        <div><i>A</i><div><b>In-house production</b><p>Co-branded merch and gear made in-house by Cole Apparel — no middleman between your logo and the finished product.</p></div></div>
+        <div><i>B</i><div><b>A business network</b><p>Through Cole Apparel, partners get introductions to local businesses most athletes never get access to.</p></div></div>
+        <div><i>C</i><div><b>A champion who shows up</b><p>2025 AMP Shifter Champion, Team USA in Spain, 86% podium rate — run like a professional operation.</p></div></div>
       </div>
     </div>
-    <div class="menu">
-      <div><b>Close deals trackside</b><p>Host clients and referral partners at the track for a race day they'll remember.</p></div>
-      <div><b>Merch that gets worn</b><p>Co-branded apparel produced in-house by Cole Apparel — real gear, not trinkets.</p></div>
-      <div><b>Content for your channels</b><p>Photo and video from every race weekend, cut for your own marketing.</p></div>
-      <div><b>Know what you got</b><p>QR codes and promo codes track the real customers the partnership drives.</p></div>
-      <div><b>Warm introductions</b><p>Introductions to local businesses across the Cole Apparel network.</p></div>
-      <div><b>Draw a crowd</b><p>Cole's race kart at your storefront, office, or event — an instant conversation piece.</p></div>
-      <div><b>Reward your team</b><p>A hosted day at the track that doubles as team-building your staff will enjoy.</p></div>
-      <div><b>Lock out competitors</b><p>Be the only business in your category in the program.</p></div>
-    </div>
-    <div class="tiers">
-      <div class="tier hot"><h3>Title Partner</h3><p>Naming rights, lead kart placement, full activation menu, category exclusivity.</p></div>
-      <div class="tier"><h3>Race Partner</h3><p>Major kart & suit placement, hospitality days, content package.</p></div>
-      <div class="tier"><h3>Supporting</h3><p>Kart placement, social features, event access.</p></div>
-      <div class="tier"><h3>Technical</h3><p>In-kind partners: parts, services, facilities.</p></div>
-    </div>
-    <form class="lead" data-thanks="Thank you. Tye will send a deck built around your company soon." style="margin-top:28px">
-      <input type="hidden" name="form_type" value="Sponsorship deck request">
-      <div style="display:none" aria-hidden="true"><label>Leave this empty<input type="text" name="bot_field" tabindex="-1" autocomplete="off"></label></div>
-      <div class="lgrid">
-        <label>Your name<input type="text" name="name" required autocomplete="name"></label>
-        <label>Work email<input type="email" name="email" required autocomplete="email"></label>
-        <label>Company<input type="text" name="company" required autocomplete="organization"></label>
-        <label>Company website<input type="text" name="website" autocomplete="url" placeholder="optional"></label>
+
+    <div class="sp-h"><i>02</i><div><h3>Where your logo goes</h3><p>On the kart, on the driver, on the gear</p></div></div>
+    <div class="sp-map">
+      <div class="sp-diag">
+        <div class="tag">Livery map · <b>CRG Road Rebel · left side</b></div>
+        <div class="kw">
+          <img src="kart-side.webp" width="667" height="210" alt="Side profile of a CRG Road Rebel shifter kart" loading="lazy">
+          <span class="pin" style="left:41%;top:78%">1</span>
+          <span class="pin" style="left:95%;top:80%">2</span>
+          <span class="pin" style="left:74%;top:20%">3</span>
+          <span class="pin" style="left:5%;top:74%">4</span>
+        </div>
+        <div class="floor"></div>
       </div>
-      <fieldset class="lchecks"><legend>What interests you most?</legend>
-        <label><input type="checkbox" name="interests" value="Employee race nights"> Employee race nights</label>
-        <label><input type="checkbox" name="interests" value="Customer hospitality"> Customer hospitality</label>
-        <label><input type="checkbox" name="interests" value="Team merch"> Team merch</label>
-        <label><input type="checkbox" name="interests" value="Content for our channels"> Content for our channels</label>
-      </fieldset>
-      <label class="lwide">Anything we should know about your business?<textarea name="message" rows="3" placeholder="optional"></textarea></label>
-      <p><button type="submit" class="btn btn-red" data-label="Request the Sponsorship Deck">Request the Sponsorship Deck</button></p>
-      <p class="err" style="display:none">Something went wrong sending that. Please email <a href="mailto:tye@coleapparel.com" style="color:var(--red)">tye@coleapparel.com</a> directly.</p>
-      <p class="mono lnote">Prefer email? Write to <a href="mailto:tye@coleapparel.com" style="color:var(--red)">tye@coleapparel.com</a></p>
-    </form>
+      <div class="sp-legend">
+        <div><em>1</em><div><b>Side pods</b><span>The biggest panel on the kart — the shot every photo catches.</span></div></div>
+        <div><em>2</em><div><b>Nose &amp; front fairing</b><span>Leads the kart into every corner.</span></div></div>
+        <div><em>3</em><div><b>Front panel</b><span>On the steering column, dead center in head-on and grid shots.</span></div></div>
+        <div><em>4</em><div><b>Rear bumper</b><span>What the rest of the field stares at.</span></div></div>
+      </div>
+    </div>
+    <div class="sp-driver">
+      <figure><img src="driver-helmet.webp" alt="Cole in the seat between sessions" loading="lazy" style="object-position:50% 35%"><figcaption>Every sponsor rides along</figcaption></figure>
+      <div class="dl sp-legend">
+        <h5>On the driver &amp; off the track</h5>
+        <div><em class="b">5</em><div><b>Driver suit</b><span>On the podium, in interviews, in the paddock.</span></div></div>
+        <div><em class="b">6</em><div><b>Helmet</b><span>In every in-car and close-up photo.</span></div></div>
+        <div><em class="b">+</em><div><b>Team apparel &amp; hats</b><span>Co-branded tees and hats made in-house by Cole Apparel.</span></div></div>
+      </div>
+    </div>
+
+    <div class="sp-h"><i>03</i><div><h3>The activation menu</h3><p>Pick what moves your business</p></div></div>
+    <div class="sp-board">
+      <div data-n="01"><b>Close deals trackside</b><p>Bring clients and referral partners into the pits for a race day they'll remember.</p></div>
+      <div data-n="02"><b>Merch that gets worn</b><p>Co-branded apparel produced in-house by Cole Apparel — real gear, not trinkets.</p></div>
+      <div data-n="03"><b>Content for your channels</b><p>Photo and video from every race weekend — team shoot plus a hired race photographer — cut for your marketing.</p></div>
+      <div data-n="04"><b>Know what you got</b><p>QR codes and promo codes track the real customers the partnership drives.</p></div>
+      <div data-n="05"><b>Warm introductions</b><p>Introductions to local businesses across the Cole Apparel network.</p></div>
+      <div data-n="06"><b>Draw a crowd</b><p>Cole's race kart at your storefront, office, or event — an instant conversation piece.</p></div>
+      <div data-n="07"><b>Reward your team</b><p>A hosted day at the track that doubles as team-building your staff will enjoy.</p></div>
+      <div data-n="08"><b>Lock out competitors</b><p>Be the only business in your category in the program.</p></div>
+    </div>
+
+    <div class="sp-h"><i>04</i><div><h3>Partnership levels</h3><p>Grid positions for your brand</p></div></div>
+    <div class="sp-tiers">
+      <div class="sp-tier p1"><div class="hd"><span class="pos">P1</span><small>Level 1</small><h4>Title<br>Partner</h4></div>
+        <div class="lim">Only 4 Title spots · category exclusive</div>
+        <ul><li>Premium kart &amp; suit placement</li><li>Pit access &amp; hospitality</li><li>Full activation menu</li><li>Only business in your category</li></ul>
+        <div class="pr hi">From <b>$10k</b></div></div>
+      <div class="sp-tier p2"><div class="hd"><span class="pos">P2</span><small>Level 2</small><h4>Race<br>Partner</h4></div>
+        <ul><li>Major kart &amp; suit placement</li><li>Pit access &amp; hospitality days</li><li>Content package</li></ul>
+        <div class="pr">Details on request</div></div>
+      <div class="sp-tier"><div class="hd"><span class="pos">P3</span><small>Level 3</small><h4>Supporting<br>Partner</h4></div>
+        <ul><li>Kart placement</li><li>Social features</li><li>Race-day pit passes</li></ul>
+        <div class="pr">Details on request</div></div>
+      <div class="sp-tier"><div class="hd"><span class="pos">P4</span><small>Race costs</small><h4>Cover<br>a cost</h4></div>
+        <div class="chips"><span>Tires</span><span>Entry fees</span><span>Fuel</span><span>Parts</span><span>Travel</span></div>
+        <ul><li>Sponsor a line item of the season</li><li>Your logo on the kart</li><li>In-kind parts &amp; services welcome</li></ul>
+        <div class="pr">Pick a line item</div></div>
+    </div>
+
+    <div class="sp-cta" id="sp-deck">
+      <div class="chk"></div>
+      <div class="in">
+        <div class="side">
+          <h3>Get on the grid<br><span>for 2027</span></h3>
+          <p>Tell us about your business and Tye will send a sponsorship deck built around your company.</p>
+          <a class="mail" href="mailto:tye@coleapparel.com">tye@coleapparel.com</a><br>
+          <img class="mark" src="cgr-mark.png" alt="CGR">
+        </div>
+        <form class="lead" data-thanks="Thank you. Tye will send a deck built around your company soon.">
+          <input type="hidden" name="form_type" value="Sponsorship deck request">
+          <div style="display:none" aria-hidden="true"><label>Leave this empty<input type="text" name="bot_field" tabindex="-1" autocomplete="off"></label></div>
+          <div class="lgrid">
+            <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+            <label>Work email<input type="email" name="email" required autocomplete="email"></label>
+            <label>Company<input type="text" name="company" required autocomplete="organization"></label>
+            <label>Company website<input type="text" name="website" autocomplete="url" placeholder="optional"></label>
+          </div>
+          <fieldset class="lchecks"><legend>What interests you most?</legend>
+            <label><input type="checkbox" name="interests" value="Employee race nights"> Employee race nights</label>
+            <label><input type="checkbox" name="interests" value="Customer hospitality"> Customer hospitality</label>
+            <label><input type="checkbox" name="interests" value="Team merch"> Team merch</label>
+            <label><input type="checkbox" name="interests" value="Content for our channels"> Content for our channels</label>
+          </fieldset>
+          <label class="lwide">Anything we should know about your business?<textarea name="message" rows="3" placeholder="optional"></textarea></label>
+          <p><button type="submit" class="sp-btn" data-label="Request the Sponsorship Deck">Request the Sponsorship Deck</button></p>
+          <p class="err" style="display:none">Something went wrong sending that. Please email <a href="mailto:tye@coleapparel.com">tye@coleapparel.com</a> directly.</p>
+          <p class="mono lnote">Prefer email? Write to <a href="mailto:tye@coleapparel.com">tye@coleapparel.com</a></p>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
+
 
 <section id="race-night" style="background:var(--paper)">
   <div class="wrap">
@@ -411,16 +858,27 @@
 </section>
 
 <section id="partners">
+<style>
+  .pitwall{position:relative;margin:8px 0 28px;padding:52px 0;background:
+    linear-gradient(27deg,#141519 5px,transparent 5px) 0 5px,linear-gradient(207deg,#141519 5px,transparent 5px) 10px 0,
+    linear-gradient(27deg,#1b1c21 5px,transparent 5px) 0 10px,linear-gradient(207deg,#1b1c21 5px,transparent 5px) 10px 5px,
+    linear-gradient(90deg,#17181c 10px,transparent 10px),linear-gradient(#18191d 25%,#151619 25%,#151619 50%,transparent 50%,transparent 75%,#1d1e22 75%,#1d1e22);
+    background-color:#121316;background-size:20px 20px}
+  .pitwall::before,.pitwall::after{content:"";position:absolute;left:0;right:0;height:6px;background:linear-gradient(100deg,#232047 0 38%,#E0DCDC 38% 40%,#BD1A2C 40% 100%)}
+  .pitwall::before{top:0}.pitwall::after{bottom:0}
+  #partners .kicker{color:#BD1A2C}
+</style>
+
   <div class="wrap">
     <div class="kicker">The Roster</div>
     <h2>Partners past & present</h2>
   </div>
-  <div style="background:var(--ink);padding:44px 0;margin:8px 0 28px">
+  <div class="pitwall">
     <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:36px 48px">
       <style>
         #partners .wrap img{transition:transform .25s,filter .25s;cursor:pointer}
         #partners .wrap a{display:inline-flex;align-items:center;text-decoration:none}
-        #partners .wrap img:hover{transform:translateY(-8px) scale(1.28) rotate(-1deg);filter:drop-shadow(0 16px 28px rgba(255,107,0,.45))}
+        #partners .wrap img:hover{transform:translateY(-8px) scale(1.28) rotate(-1deg);filter:drop-shadow(0 16px 28px rgba(189,26,44,.45))}
       </style>
       <a href="https://www.questavolta.com" target="_blank" rel="noopener sponsored"><img src="logos/questavolta.png" alt="QuestaVolta" style="height:56px;width:auto"></a>
       <a href="https://www.alphastructural.com" target="_blank" rel="noopener sponsored"><img src="logos/alphastructural.png" alt="Alpha Structural, Inc." style="height:76px;width:auto"></a>
